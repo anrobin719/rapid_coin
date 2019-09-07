@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Rapid Coin</title>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <div id="overlay">
+        <h1>Rapid Coin</h1>
+
+        <!-- 왼쪽 검색, 출력 -->
+        <section class="js_info info">
+            <!-- 검색 코인 인풋, 출력 -->
+            <form class="js_form form">
+                <input type="text" placeholder="어떤 코인을 검색하나요?">
+                <button>검색</button>
+            </form>
+            <h4 class="js_coinTitle coinTitle"></h4>
+
+            <div class="js_infoListBox infoListBox">
+                <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
+                <ul class="js_infoList infoList">
+                </ul>
+                <button>암호화폐 거래소 이동</button>
+            </div>
+        </section>
+
+        <!-- 오른쪽 그래프 -->
+        <section class="js_graphBox graphBox">
+            <!-- grahp info -->
+            <div class="js_graphInfo graphInfo">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="js_graph graph">
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
