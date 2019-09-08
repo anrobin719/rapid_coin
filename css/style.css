@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+  font-weight: inherit; }
+
+ol, ul {
+  margin: 0;
+  padding: 0; }
+  ol li, ul li {
+    list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.box {
+  width: 120px;
+  height: 360px;
+  position: relative;
+  margin-left: 100px; }
+  .box .progressbar {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-30deg) rotateZ(-180deg); }
+    .box .progressbar .side {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .box .progressbar .front {
+      transform-origin: bottom;
+      box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.2); }
+    .box .progressbar .right {
+      transform: translate(-100%, 0) rotateY(-90deg);
+      transform-origin: right; }
+    .box .progressbar .back {
+      transform: translateZ(-120px); }
+    .box .progressbar .left {
+      transform: rotateY(-90deg);
+      transform-origin: right;
+      box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.3); }
+    .box .progressbar .bottom {
+      height: 120px;
+      transform: rotateX(-90deg);
+      transform-origin: top;
+      background-color: rgba(19, 243, 206, 0.6); }
+    .box .progressbar .bar {
+      width: 100%;
+      height: 0;
+      background-color: rgba(19, 243, 206, 0.6);
+      box-shadow: 0 0 30px rgba(19, 243, 206, 0.3);
+      animation: loding 4s ease-in-out normal forwards;
+      position: relative; }
+
+@keyframes loding {
+  0% {
+    height: 0%; }
+  100% {
+    height: 100%; } }
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  background-color: #0a0e1a; }
+  body header {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 3rem; }
+    body header i.material-icons {
+      margin-left: 1rem;
+      line-height: 3rem;
+      cursor: pointer; }
+    body header h1 {
+      font-size: 1.2rem;
+      line-height: 3rem;
+      margin: 0;
+      margin-right: 1rem;
+      float: right; }
+  body .first {
+    display: flex;
+    flex: 1 1 0%; }
+  body aside {
+    display: none;
+    width: 20rem;
+    max-width: 70%;
+    height: 100vh;
+    background-color: #0a0b18;
+    position: relative;
+    z-index: 99;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: box-shadow 300ms ease-in 0s;
+    color: white; }
+    body aside .asideHead {
+      height: 4rem;
+      margin: 0 1rem;
+      line-height: 4rem;
+      border-bottom: 1px solid #1a2444; }
+      body aside .asideHead h2 {
+        font-size: 1rem;
+        text-align: center;
+        float: left; }
+      body aside .asideHead i {
+        float: right;
+        display: block;
+        line-height: 4rem; }
+      body aside .asideHead::after {
+        content: "";
+        display: block;
+        clear: both; }
+    body aside .bidList, body aside .askList {
+      padding: .3rem 1rem; }
+    body aside .bidList {
+      color: #42ccf6; }
+    body aside .askList {
+      color: #fb3e9d; }
+    body aside .bidRowTitle, body aside .askRowTitle {
+      font-size: .8rem;
+      line-height: 2.6rem;
+      height: 2.6rem;
+      width: 100%;
+      display: flex; }
+      body aside .bidRowTitle span, body aside .askRowTitle span {
+        flex: 0 0 50%;
+        text-align: right;
+        padding-right: 1rem;
+        border-bottom: 1px solid #0e162e; }
+    body aside .bidRow, body aside .askRow {
+      font-size: .8rem;
+      font-weight: 600;
+      line-height: 2.6rem;
+      height: 2.6rem;
+      width: 100%;
+      display: flex; }
+      body aside .bidRow span, body aside .askRow span {
+        flex: 0 0 50%;
+        text-align: right;
+        padding-right: 1rem;
+        border-bottom: 1px solid #0e162e; }
+      body aside .bidRow span:first-child, body aside .askRow span:first-child {
+        border-right: 1px solid #0e162e; }
+  body #firstPage {
+    background: linear-gradient(#0e162e, #0a0e1a);
+    height: 100vh;
+    padding-top: 5rem;
+    box-sizing: border-box;
+    color: white;
+    max-width: 100%;
+    z-index: 1;
+    flex-grow: 1;
+    flex-shrink: 1; }
+    body #firstPage > h2 {
+      display: none;
+      font-size: 2rem;
+      font-weight: 300;
+      display: flex;
+      justify-content: center; }
+    body #firstPage .wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 3rem 6rem; }
+      body #firstPage .wrapper .info {
+        flex: 0 0 70%;
+        display: flex;
+        flex-flow: column;
+        align-items: center; }
+        body #firstPage .wrapper .info .clockBox .clock {
+          font-size: 6rem;
+          font-weight: 400;
+          margin: 2rem 0; }
+        body #firstPage .wrapper .info .form {
+          display: none;
+          font-size: 1.6rem;
+          margin-bottom: 3rem; }
+          body #firstPage .wrapper .info .form input {
+            width: 22rem;
+            margin-right: 1rem;
+            padding: 1rem;
+            color: white;
+            font-size: inherit;
+            font-weight: 300;
+            border: none;
+            border-bottom: 1px solid white;
+            background-color: inherit;
+            outline: none; }
+            body #firstPage .wrapper .info .form input::placeholder {
+              font-weight: 300;
+              color: rgba(255, 255, 255, 0.2); }
+          body #firstPage .wrapper .info .form button {
+            background-color: inherit;
+            border: 1px solid white;
+            border-radius: .2rem;
+            color: white;
+            padding: .6rem 1.2rem;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin: 4px 2px;
+            cursor: pointer; }
+        body #firstPage .wrapper .info .coinTitle {
+          font-size: 2rem; }
+        body #firstPage .wrapper .info .infoListBox {
+          margin-bottom: 3rem; }
+        body #firstPage .wrapper .info > button {
+          background-color: inherit;
+          border: 1px solid white;
+          border-radius: .2rem;
+          color: white;
+          padding: .6rem 1.4rem;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer; }
+      body #firstPage .wrapper .graphBox {
+        flex: 0 0 30%;
+        position: relative; }
+        body #firstPage .wrapper .graphBox .graphContainer {
+          width: 200px;
+          height: 400px;
+          position: absolute;
+          bottom: 0; }
+          body #firstPage .wrapper .graphBox .graphContainer .box {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin: 0; }
+            body #firstPage .wrapper .graphBox .graphContainer .box h2 {
+              position: absolute;
+              bottom: 0;
+              transform: translateX(-100%) rotate(180deg);
+              font-weight: 600;
+              font-size: 1.6rem; }
+            body #firstPage .wrapper .graphBox .graphContainer .box h6 {
+              position: absolute;
+              bottom: 2rem;
+              transform: translateX(-100%) rotate(180deg);
+              font-weight: 600;
+              font-size: 1rem; }
+  body #secondPage {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 5rem;
+    box-sizing: border-box;
+    color: #343a40;
+    display: flex;
+    justify-content: center; }
+    body #secondPage .wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      width: 80%;
+      max-width: 90%;
+      padding: 3rem 0;
+      background-color: #fff; }
+      body #secondPage .wrapper h2 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 2rem auto 1rem; }
+      body #secondPage .wrapper article {
+        height: 6rem;
+        display: flex; }
+        body #secondPage .wrapper article .img {
+          outline: 1px solid red;
+          flex: 0 0 30%; }
+        body #secondPage .wrapper article .contents {
+          flex: 0 0 70%;
+          display: flex;
+          flex-flow: column;
+          padding-left: 1rem;
+          position: relative; }
+          body #secondPage .wrapper article .contents h4 {
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.6rem; }
+          body #secondPage .wrapper article .contents span {
+            font-size: .8rem;
+            line-height: 1.6rem;
+            color: #8f979e;
+            position: absolute;
+            top: 0;
+            right: 0; }
+          body #secondPage .wrapper article .contents p {
+            margin-top: .3rem;
+            font-size: .8rem; }
+      body #secondPage .wrapper .news, body #secondPage .wrapper .meetup {
+        flex: 0 0 50%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        padding: 0 4rem;
+        box-sizing: border-box; }
+        body #secondPage .wrapper .news > div, body #secondPage .wrapper .meetup > div {
+          text-align: right;
+          padding-right: 1rem; }
+      body #secondPage .wrapper .news {
+        border-right: 1px solid #eceef0; }

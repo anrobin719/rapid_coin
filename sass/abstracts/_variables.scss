@@ -1,17 +1,31 @@
-// variables
+// VARIABLES
 
-$c-primary: #41bcdb;
-$c-primary-light: #61cae4;
-$c-primary-dark: #1bb1d6;
+// COLOR
 
-$c-secondary: #f67524;
-$c-secondary-light: #f08a4a;
-$c-secondary-dark: #e4681b;
+// $c-primary: #41bcdb;
+// $c-primary-light: #61cae4;
+// $c-primary-dark: #1bb1d6;
+// $c-secondary: #f67524;
+// $c-secondary-light: #f08a4a;
+// $c-secondary-dark: #e4681b;
 
-$c-navy-light: #5f5f70;
-$c-navy-dark: #3c3b47;
+$c-primary: #0e162e;
+$c-primary-light: #1a2444;
+$c-primary-dark: #0a0e1a;
 
-$c-white: #fff;
-$c-gray-light: #a8a8a8;
-$c-gray-dark: #5d5d5d;
-$c-black: #2f2f2f;
+$c-up: #42ccf6;
+$c-down: #fb3e9d;
+$c-orange: #ff9409;
+$c-mint: #13f3ce;
+
+$c-navy-dark: #0a0b18;
+
+$c-gray-2: #eceef0;
+$c-gray-4: #ced4da;
+$c-gray-6: #8f979e;
+$c-gray-8: #343a40;
+
+// FONT
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap');
+$f-ko-sans: 'Noto Sans KR', sans-serif;
+$f-en-sans: 'Noto Sans', sans-serif;

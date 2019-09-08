@@ -3,48 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Rapid Coin</title>
 </head>
 <body>
+    <!-- 헤더 -->
     <header>
+        <i id="asideBtn" class="material-icons">sort</i>
+        <h1>Rapid Coin</h1>
         <nav></nav>
     </header>
-    <div id="overlay">
-        <h1>Rapid Coin</h1>
 
-        <!-- 왼쪽 검색, 출력 -->
-        <section class="js_info info">
-            <!-- 검색 코인 인풋, 출력 -->
-            <form class="js_form form">
-                <input type="text" placeholder="어떤 코인을 검색하나요?">
-                <button>검색</button>
-            </form>
-            <h4 class="js_coinTitle coinTitle"></h4>
-
-            <div class="js_infoListBox infoListBox">
-                <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
-                <ul class="js_infoList infoList">
-                </ul>
-                <button>암호화폐 거래소 이동</button>
+    <!-- 사이드 드로우 + 첫 페이지 -->
+    <div class="first">
+        
+        <!-- 사이드 드로우 -->
+        <aside>
+            <div class="asideHead">
+                <h2>이더리움 실시간 매도/매수</h2>
+                <i id="closeBtn" class="material-icons">keyboard_arrow_left </i>
             </div>
-        </section>
 
-        <!-- 오른쪽 그래프 -->
-        <section class="js_graphBox graphBox">
-            <!-- grahp info -->
-            <div class="js_graphInfo graphInfo">
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+            <section class="js_bidList bidList">
+                <div class="js_bidRowTitle bidRowTitle">
+                    <span>매도가격</span>
+                    <span>수량</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_bidRow bidRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+            </section>
+            <section class="js_askList askList">
+                <div class="js_askRowTitle askRowTitle">
+                    <span>매수가격</span>
+                    <span>수량</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+                <div class="js_askRow askRow">
+                    <span>414000</span>
+                    <span>11.4946</span>
+                </div>
+            </section>
+        </aside>
+    
+        <!-- 첫번째 페이지 -->
+        <section id="firstPage">
+            <h2>기본으로 설정할 코인을 입력해주세요.</h2>
+        
+            <div class="wrapper">
+                <!-- 왼쪽 검색, 출력 -->
+                <section class="js_info info">
+                    <!-- 검색 코인 인풋, 출력 -->
+                    <div class="js_clockBox clockBox">
+                        <h2 class="js_clock clock">00:00</h2>
+                    </div>
+        
+                    <form class="js_form form" autocomplete="off">
+                        <input list="coins" placeholder="원하는 코인을 입력하세요" name="coin"/>
+                        <datalist id="coins">
+                            <option value="BTC">
+                            <option value="ETH">
+                            <option value="XRP">
+                            <option value="LUNA">
+                            <option value="ATOM">
+                            <option value="QTUM">
+                            <option value="XTZ">
+                            <option value="HINT">
+                            <option value="XLM">
+                            <option value="NEO">
+                            <option value="OMG">
+                        </datalist>
+                        <button type="submit">확인</button>
+                    </form>
+                    <h4 class="js_coinTitle coinTitle">Ethereum</h4>
+        
+                    <div class="js_infoListBox infoListBox">
+                        <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
+                        <div class="js_infoList infoList">
+                            <ul>
+                                <li>현재가 : </li>
+                                <li>고가 : </li>
+                                <li>저가 : </li>
+                                <li>전일 최고가 : </li>
+                                <li>전일 최저가 : </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button><a href="#">암호화폐 거래소 이동</a></button>
+                </section>
+        
+                <!-- 오른쪽 그래프 -->
+                <section class="js_graphBox graphBox">
+                    
+                    <!-- graph container -->
+                    <div class="js_graphContainer graphContainer">
+                        <!-- graph bar -->
+                        <div class="box">
+                            <div class="progressbar">
+                                <div class="side front">
+                                    <div class="bar">
+                                        <h2>216,400</h2>
+                                        <h6>Ethereum</h6>
+                                    </div>
+                                </div>
+                                <div class="side right">
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="side back">
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="side left">
+                                    <div class="bar"></div> 
+                                </div>
+                                <div class="side bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="js_graph graph">
-
-            </div>
+    
         </section>
     </div>
+
+    <!-- 두번째 페이지 -->
+    <section id="secondPage">
+        <div class="wrapper">
+
+            <!-- 최신 뉴스 -->
+            <div class="js_news news">
+                <h2>News</h2>
+
+                <article>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="contents">
+                        <h4>title</h4>
+                        <span>2019-08-31</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="contents">
+                        <h4>title</h4>
+                        <span>2019-08-31</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="img"><img src="" alt=""></div>
+                    <div class="contents">
+                        <h4>title</h4>
+                        <span>2019-08-31</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </article>
+                <div><a href="#">더보기</a></div>
+            </div>
+
+            <!-- 밋업 소식 -->
+            <div class="js_meetup meetup">
+                <h2>Meetup</h2>
+
+                <article>
+                        <div class="img"><img src="" alt=""></div>
+                        <div class="contents">
+                            <h4>title</h4>
+                            <span>2019-08-31</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="img"><img src="" alt=""></div>
+                        <div class="contents">
+                            <h4>title</h4>
+                            <span>2019-08-31</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="img"><img src="" alt=""></div>
+                        <div class="contents">
+                            <h4>title</h4>
+                            <span>2019-08-31</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </article>
+                <div><a href="#">더보기</a></div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
