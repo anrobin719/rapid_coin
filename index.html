@@ -99,7 +99,7 @@
     
         <!-- 첫번째 페이지 -->
         <section id="firstPage">
-            <h2>기본으로 설정할 코인을 입력해주세요.</h2>
+            <h2 class="js_defaultMessage">기본으로 설정할 코인을 입력해주세요.</h2>
         
             <div class="wrapper">
                 <!-- 왼쪽 검색, 출력 -->
@@ -110,7 +110,7 @@
                     </div>
         
                     <form class="js_form form" autocomplete="off">
-                        <input list="coins" placeholder="원하는 코인을 입력하세요" name="coin"/>
+                        <input list="coins" placeholder="원하는 코인을 입력하세요" name="coins"/>
                         <datalist id="coins">
                             <option value="BTC">
                             <option value="ETH">
@@ -126,7 +126,7 @@
                         </datalist>
                         <button type="submit">확인</button>
                     </form>
-                    <h4 class="js_coinTitle coinTitle">Ethereum</h4>
+                    <h4 class="js_coinTitle coinTitle"></h4>
         
                     <div class="js_infoListBox infoListBox">
                         <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
@@ -138,9 +138,14 @@
                                 <li>전일 최고가 : </li>
                                 <li>전일 최저가 : </li>
                             </ul>
+                            <ul class="js_infoVal">
+                                <!-- fetch infoValue -->
+                            </ul>
                         </div>
                     </div>
-                    <button><a href="#">암호화폐 거래소 이동</a></button>
+                    <button class="js_goToMarketBtn">
+                        <a href="https://coinone.co.kr/exchange/trade/btc/krw">암호화폐 거래소 이동</a>
+                    </button>
                 </section>
         
                 <!-- 오른쪽 그래프 -->
@@ -171,13 +176,16 @@
                         </div>
                     </div>
                 </section>
-            </div>
-    
-        </section>
-    </div>
+            </div><!-- end .wrapper -->
+
+            <i id="downBtn" class="material-icons">keyboard_arrow_down</i>
+        </section><!-- end #firstPage -->
+    </div><!-- end .first -->
 
     <!-- 두번째 페이지 -->
     <section id="secondPage">
+        <i id="upBtn" class="material-icons">keyboard_arrow_up</i>
+
         <div class="wrapper">
 
             <!-- 최신 뉴스 -->
@@ -243,5 +251,11 @@
             </div>
         </div>
     </section>
+
+
+    <!-- scripts -->
+    <script src="js/clock.js"></script>
+    <!-- <script src="js/link.js"></script> -->
+    <script src="js/coin.js"></script>
 </body>
 </html>
