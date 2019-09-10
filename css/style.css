@@ -114,7 +114,8 @@ body {
       body aside .asideHead i {
         float: right;
         display: block;
-        line-height: 4rem; }
+        line-height: 4rem;
+        cursor: pointer; }
       body aside .asideHead::after {
         content: "";
         display: block;

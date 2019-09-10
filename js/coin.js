@@ -9,11 +9,14 @@ const defaultMessage = document.querySelector('.js_defaultMessage'),
         BarCurrentCoin = document.querySelector('.js_BarCurrentCoin')
 
 const SHOWING_CN = 'show',
-        COIN_NAME = 'coinName';
+        COIN_NAME = 'coinName',
+        COIN_FULL_NAME = 'coinFullName',
+        COIN_KOREAN_NAME = 'coinKoreanName'
 
 
 function getCoinInfo(coin) {
-    fetch(`https://api.coinone.co.kr/ticker/?currency=${coin}`).then(res => {
+    fetch(`https://api.coinone.co.kr/ticker/?currency=${coin}`)
+        .then(res => {
             return res.json();
         })
         .then(json => {
@@ -25,16 +28,16 @@ function getCoinInfo(coin) {
                 yHighestPrice: json.yesterday_high,
                 ylowestPrice: json.yesterday_low,
             };
+            // 코인 정보 출력
             const infoVal = infoListBox.querySelector('.js_infoVal');
             for (let key in infoListObj) {
                 const li = document.createElement("li");
-                li.innerHTML = infoListObj[key];
+                li.innerText = infoListObj[key];
                 infoVal.appendChild(li);
             }
-
-            BarCurrentPrice.innerHTML = json.last;
-            BarCurrentCoin.innerHTML = json.currency;
-
+            // 그래프 바 코인, 가격 출력
+            BarCurrentPrice.innerText = json.last;
+            BarCurrentCoin.innerText = localStorage.getItem(COIN_FULL_NAME);
         });
 }
 
@@ -46,18 +49,77 @@ function setLink(coin) {
         marketAnchor.setAttribute('href', 'https://coinone.co.kr/exchange/trade/btc/krw');
     }
 }
+
 function handleSubmit(e) {
     e.preventDefault();
-    const inputVal = input.value;
-    localStorage.setItem(COIN_NAME, inputVal);
+    
+    let coinFullName = null;
+    let coinKoreanName = null;
+    switch (input.value) {
+        case 'BTC':
+            coinFullName = 'Bitcoin';
+            coinKoreanName = '비트코인';
+            break;
+        case 'ETH':
+            coinFullName = 'Ethereum';
+            coinKoreanName = '이더리움';
+            break;
+        case 'XRP':
+            coinFullName = 'Ripple';
+            coinKoreanName = '리플';
+            break;
+        case 'EOS':
+            coinFullName = 'EOS';
+            coinKoreanName = '이오스';
+            break;
+        case 'ATOM':
+            coinFullName = 'Cosmos ATOM';
+            coinKoreanName = '코스모스아톰';
+            break;
+        case 'LUNA':
+            coinFullName = 'Luna';
+            coinKoreanName = '루나';
+            break;
+        case 'QTUM':
+            coinFullName = 'Qtum';
+            coinKoreanName = '퀀텀';
+            break;
+        case 'XTZ':
+            coinFullName = 'Tezos';
+            coinKoreanName = '테조스';
+            break;
+        case 'HINT':
+            coinFullName = 'Hintchain';
+            coinKoreanName = '비트코인';
+            break;
+        case 'XLM':
+            coinFullName = 'Stellar Lumens';
+            coinKoreanName = '스텔라루멘';
+            break;
+        case 'NEO':
+            coinFullName = 'NEO';
+            coinKoreanName = '네오';
+            break;
+        case 'OMG':
+            coinFullName = 'OmiseGO';
+            coinKoreanName = '오미세고';
+            break;
+        default: coinFullName;
+    }
+
+    localStorage.setItem(COIN_NAME, input.value);
+    localStorage.setItem(COIN_FULL_NAME, coinFullName);
+    localStorage.setItem(COIN_KOREAN_NAME, coinKoreanName);
     paintCoin();
 }
+
 function askForCoin() {
     console.log('Ask for coin start!');
     defaultMessage.classList.add(SHOWING_CN);
     form.classList.add(SHOWING_CN);
     form.addEventListener('submit', handleSubmit);
 }
+
 function paintCoin() {
     console.log('Paint coin start!');
     defaultMessage.classList.remove(SHOWING_CN);
@@ -65,10 +127,11 @@ function paintCoin() {
     coinTitle.classList.add(SHOWING_CN);
     infoListBox.classList.add(SHOWING_CN);
     const coin = localStorage.getItem(COIN_NAME);
-    coinTitle.innerHTML = coin;
+    coinTitle.innerText = coin;
     setLink(coin);
     getCoinInfo(coin);
 }
+
 function init() {
     const coin = localStorage.getItem(COIN_NAME);
     if(!coin) {
