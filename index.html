@@ -12,7 +12,7 @@
 <body>
     <!-- 헤더 -->
     <header>
-        <i id="asideBtn" class="material-icons">sort</i>
+        <i id="openBtn" class="material-icons">sort</i>
         <h1>Rapid Coin</h1>
         <nav></nav>
     </header>
@@ -131,14 +131,14 @@
                     <div class="js_infoListBox infoListBox">
                         <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
                         <div class="js_infoList infoList">
-                            <ul>
+                            <ul class="infoTitle">
                                 <li>현재가 : </li>
                                 <li>고가 : </li>
                                 <li>저가 : </li>
                                 <li>전일 최고가 : </li>
                                 <li>전일 최저가 : </li>
                             </ul>
-                            <ul class="js_infoVal">
+                            <ul class="js_infoVal infoVal">
                                 <!-- fetch infoValue -->
                             </ul>
                         </div>
@@ -158,8 +158,8 @@
                             <div class="progressbar">
                                 <div class="side front">
                                     <div class="bar">
-                                        <h2>216,400</h2>
-                                        <h6>Ethereum</h6>
+                                        <h2 class="js_BarCurrentPrice"></h2>
+                                        <h6 class="js_BarCurrentCoin"></h6>
                                     </div>
                                 </div>
                                 <div class="side right">
@@ -257,5 +257,6 @@
     <script src="js/clock.js"></script>
     <!-- <script src="js/link.js"></script> -->
     <script src="js/coin.js"></script>
+    <script src="js/sideDrawer.js"></script>
 </body>
 </html>

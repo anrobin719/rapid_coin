@@ -4,7 +4,9 @@ const defaultMessage = document.querySelector('.js_defaultMessage'),
         coinTitle = document.querySelector('.js_coinTitle'),
         infoListBox = document.querySelector('.infoListBox'),
         goToMarketBtn = document.querySelector('.js_goToMarketBtn'),
-        anchor = goToMarketBtn.querySelector('a');
+        marketAnchor = goToMarketBtn.querySelector('a'),
+        BarCurrentPrice = document.querySelector('.js_BarCurrentPrice'),
+        BarCurrentCoin = document.querySelector('.js_BarCurrentCoin')
 
 const SHOWING_CN = 'show',
         COIN_NAME = 'coinName';
@@ -16,29 +18,32 @@ function getCoinInfo(coin) {
         })
         .then(json => {
             console.log(json);
-            const resArray = [];
-            const currentPrice = json.last;
-            const highestPrice = json.high;
-            const lowestPrice = json.low;
-            const yHighestPrice = json.yesterday_high;
-            const ylowestPrice = json.yesterday_low;
-            resArray.push(currentPrice, highestPrice, lowestPrice, yHighestPrice, ylowestPrice);
-            console.log(`This is resArray`, resArray);
-            const infoList = infoListBox.querySelector('.js_infoVal');
-            const lists = resArray.map(list => {
+            const infoListObj = {
+                currentPrice: json.last,
+                highestPrice: json.high,
+                lowestPrice: json.low,
+                yHighestPrice: json.yesterday_high,
+                ylowestPrice: json.yesterday_low,
+            };
+            const infoVal = infoListBox.querySelector('.js_infoVal');
+            for (let key in infoListObj) {
                 const li = document.createElement("li");
-                li.innerHTML = list;
-                infoList.appendChild(li);
-            });
+                li.innerHTML = infoListObj[key];
+                infoVal.appendChild(li);
+            }
+
+            BarCurrentPrice.innerHTML = json.last;
+            BarCurrentCoin.innerHTML = json.currency;
+
         });
 }
 
 function setLink(coin) {
     const lowerCaseCoin = coin.toLowerCase();
     if (coin) {
-        anchor.setAttribute('href', `https://coinone.co.kr/exchange/trade/${lowerCaseCoin}/krw`);
+        marketAnchor.setAttribute('href', `https://coinone.co.kr/exchange/trade/${lowerCaseCoin}/krw`);
     } else {
-        anchor.setAttribute('href', 'https://coinone.co.kr/exchange/trade/btc/krw');
+        marketAnchor.setAttribute('href', 'https://coinone.co.kr/exchange/trade/btc/krw');
     }
 }
 function handleSubmit(e) {

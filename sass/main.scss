@@ -37,27 +37,22 @@ body {
 
     // 사이드 드로우 + 첫 페이지
     .first {
-        display: flex;
-        flex: 1 1 0%;
+        // display: flex;
+        // flex: 1 1 0%;
     }
     aside {
-        
-        display: none;
-
-        width: 20rem;
-        max-width: 70%;
-        height: 100vh;
-        background-color: $c-navy-dark;
-        position: relative;
+        display: block;
+        position: absolute;
         z-index: 99;
-        flex-grow: 0;
-        flex-shrink: 0;
-        transition: box-shadow 300ms ease-in 0s;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 20rem;
         color: white;
+        background-color: $c-navy-dark;
 
-        .show {
-            display: block;
-        }
+        opacity: 0;
+        transform: translateX(-100%);
         
         .asideHead {
             height: 4rem;
@@ -122,20 +117,25 @@ body {
             }
         }
     }
+    .asideShow {
+        opacity: 1;
+        transform: translateX(0%);
+    }
 
     // 첫번째 페이지
     #firstPage {
         background: linear-gradient($c-primary, $c-primary-dark);
         height: 100vh;
+        width: 100vw;
+        margin-left: auto;
         padding-top: 5rem;
         box-sizing: border-box;
         color: white;
-        max-width: 100%;
         z-index: 1;
-        flex-grow: 1;
-        flex-shrink: 1;
+        // flex-grow: 1;
+        // flex-shrink: 1;
         // outline: 1px solid $c-orange;
-
+        
         > h2 {
             display: none;
             font-size: 2rem;
@@ -143,14 +143,14 @@ body {
             display: none;
             justify-content: center;
         }
-
+        
         .show {
             display: flex;
         }
         
         .wrapper {
-            position: absolute;
-            width: 100vw;
+            position: relative;
+            max-width: 100%;
             top: 50%;
             transform: translateY(-50%);
             min-height: 500px;
@@ -166,12 +166,14 @@ body {
                 display: flex;
                 flex-flow: column;
                 align-items: center;
-    
+                position: relative;
+                
                 // clock
                 .clockBox {
                     .clock {
+                        // outline: 1px solid red;
                         font-size: 6rem;
-                        font-weight: 400;
+                        font-weight: 700;
                         margin: 2rem 0;
                     }    
                 }
@@ -221,22 +223,31 @@ body {
                     display: none;
                     font-size: 2rem;
                     margin-bottom: 1rem;
+                    // outline: 1px solid red;
                 }
     
                 // 코인 정보 리스트 박스
                 .infoListBox {
                     display: none;
-                    margin-bottom: 3rem;
-                    display: flex;
-                    justify-content: right;
+                    position: absolute;
+                    bottom: 2rem;
+                    right: 1rem;
+                    color: $c-primary-bright;
+                    // outline: 1px solid red;
                     // 코인 정보 리스트
                     .infoList {
                         ul {
                             float: left;
                             margin-right: 1rem;
-                            &:first-child {
-                                text-align: right;
+                            > li {
+                                line-height: 1.8rem;
                             }
+                        }
+                        .infoTitle {
+                            text-align: right;
+                        }
+                        .infoVal {
+
                         }
                         &::after {
                             display: block;
@@ -247,7 +258,13 @@ body {
                 }
 
                 .show {
-                    display: block;
+                    -webkit-transition: opacity 3s;
+                    -moz-transition: opacity 3s;
+                    -ms-transition: opacity 3s;
+                    -o-transition: opacity 3s;
+                    transition: opacity 3s;
+                    opacity: 1;
+                    display: flex;
                 }
     
                 > button {
