@@ -1,0 +1,112 @@
+// 두번째 페이지
+#secondPage {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 5rem;
+    box-sizing: border-box;
+    color: $c-gray-8;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    i.material-icons {
+        position: absolute;
+        color: white;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.4rem;
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        width: 80%;
+        max-width: 90%;
+        padding: 3rem 0;
+        background-color: #fff;
+        // outline: 1px solid cyan;
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 2rem auto 1rem;
+        }
+
+        article {
+            // outline: 1px solid cyan;
+            height: 6rem;
+            display: flex;
+            cursor: pointer;
+
+            .img, .date {
+                // outline: 1px solid red;
+                flex: 0 0 30%;
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            .date {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                font-weight: 600;
+                color: $c-up;
+                border: 1px solid $c-gray-2;
+            }
+
+            .contents {
+                // outline: 1px solid red;
+                flex: 0 0 70%;
+                display: flex;
+                flex-flow: column;
+                padding-left: 1rem;
+                position: relative;
+
+                h4 {
+                    font-weight: 600;
+                    font-size: 1rem;
+                    line-height: 1.6rem;
+                }
+                h6 {
+                    font-size: .8rem;
+                    font-weight: 300;
+                }
+                span {
+                    font-size: .8rem;
+                    line-height: 1.6rem;
+                    color: $c-gray-6;
+                }
+            }
+        }
+
+        .news, .meetup {
+            flex: 0 0 50%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            padding: 0 4rem;
+            box-sizing: border-box;
+            // outline: 1px solid red;
+            > div {
+                text-align: right;
+                padding-right: 1rem;
+            }
+        }
+        
+        .news {
+            border-right: 1px solid $c-gray-2;
+        }
+
+        // .meetup {
+        //     article {
+        //         .contents {
+        //             flex: 0 0 100%;
+        //         }
+        //     }
+        // }
+    }
+}

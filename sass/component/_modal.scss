@@ -1,0 +1,107 @@
+.modalBox {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    outline: 1px solid red;
+    // 모달 공통
+    .modal {
+        width: 46rem;
+        max-width: 80%;
+        max-height: 90%;
+        padding: 4rem 3rem;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: scroll;
+    }
+    
+    // 뉴스 모달
+    .newsModal {
+        display: none;
+        > h4 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .sub {
+            padding: .5rem 0 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid $c-gray-4;
+            display: flex;
+            justify-content: space-between;
+            span {
+                font-size: .8rem;
+                color: $c-gray-6;
+                :first-child {
+                    float: left;
+                }
+                :nth-child(2) {
+                    float: right;
+                }
+            }
+
+        }
+        .newsModalImgBox {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        .newsModalContentBox {
+            width: 100%;
+            padding: 2rem 0 4rem;
+            table {
+                display: none;
+            }
+        }
+    }
+
+    // 밋업 모달
+    .meetupModal {
+        display: none;
+        .meetupModalTitleBox {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid $c-gray-4;
+            display: flex;
+            margin-bottom: 2rem;
+
+            strong {
+                font-size: 1.6rem;
+                color: $c-up;
+                font-weight: 600;
+            }
+            h4 {
+                margin-left: 1rem;
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+        }
+        .meetupModalContentBox {
+            width: 100%;
+            padding: 2rem 0 4rem;
+            margin-bottom: 2rem;
+        }
+        .meetupModalBtnBox{
+            margin-bottom: 2rem;
+            text-align: center;
+            a {
+                padding: .4rem 1.6rem .6rem;
+                border: 1px solid $c-gray-6;
+                border-radius: .2rem;
+            }
+        }
+    }
+    .show {
+        display: block;
+    }
+}
+
+.show {
+    display: block;
+}

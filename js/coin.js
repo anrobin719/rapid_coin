@@ -20,7 +20,6 @@ function getCoinInfo(coin) {
             return res.json();
         })
         .then(json => {
-            console.log(json);
             const infoListObj = {
                 currentPrice: json.last,
                 highestPrice: json.high,
@@ -114,14 +113,12 @@ function handleSubmit(e) {
 }
 
 function askForCoin() {
-    console.log('Ask for coin start!');
     defaultMessage.classList.add(SHOWING_CN);
     form.classList.add(SHOWING_CN);
     form.addEventListener('submit', handleSubmit);
 }
 
 function paintCoin() {
-    console.log('Paint coin start!');
     defaultMessage.classList.remove(SHOWING_CN);
     form.classList.remove(SHOWING_CN);
     coinTitle.classList.add(SHOWING_CN);

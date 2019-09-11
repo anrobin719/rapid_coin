@@ -1,0 +1,206 @@
+// 첫번째 페이지
+#firstPage {
+    background: linear-gradient($c-primary, $c-primary-dark);
+    height: 100vh;
+    width: 100vw;
+    margin-left: auto;
+    padding-top: 5rem;
+    box-sizing: border-box;
+    color: white;
+    z-index: 1;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // outline: 1px solid $c-orange;
+    
+    > h2 {
+        display: none;
+        font-size: 2rem;
+        font-weight: 300;
+        display: none;
+        justify-content: center;
+    }
+    
+    .show {
+        display: flex;
+    }
+    
+    .wrapper {
+        position: relative;
+        max-width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        min-height: 500px;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 3rem 6rem;
+        // outline: 1px solid cyan;
+    
+        // LEFT
+        .info {
+            // outline: 1px solid red;
+            flex: 0 0 70%;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            position: relative;
+            
+            // clock
+            .clockBox {
+                .clock {
+                    // outline: 1px solid red;
+                    font-size: 6rem;
+                    font-weight: 700;
+                    margin: 2rem 0;
+                }    
+            }
+            
+            // 첫 시작시 정보 입력
+            .form {
+                display: none;
+                font-size: 1.6rem;
+                margin-bottom: 3rem;
+
+                .show {
+                    display: block;
+                }
+
+                input {
+                    width: 22rem;
+                    margin-right: 1rem;
+                    padding: 1rem;
+                    color: white;
+                    font-size: inherit;
+                    font-weight: 300;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    background-color: inherit;
+                    outline: none;
+                    &::placeholder {
+                        font-weight: 300;
+                        color: rgba(255, 255, 255, 0.2);
+                    }
+                }
+                button {
+                    background-color: inherit;
+                    border: 1px solid white;
+                    border-radius: .2rem;
+                    color: white;
+                    padding: .6rem 1.2rem;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 1.2rem;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                }
+            }
+            // 코인 이름 출력
+            .coinTitle {
+                display: none;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                // outline: 1px solid red;
+            }
+
+            // 코인 정보 리스트 박스
+            .infoListBox {
+                display: none;
+                position: absolute;
+                bottom: 2rem;
+                right: 1rem;
+                color: $c-primary-bright;
+                // outline: 1px solid red;
+                // 코인 정보 리스트
+                .infoList {
+                    ul {
+                        float: left;
+                        margin-right: 1rem;
+                        > li {
+                            line-height: 1.8rem;
+                        }
+                    }
+                    .infoTitle {
+                        text-align: right;
+                    }
+                    .infoVal {
+
+                    }
+                    &::after {
+                        display: block;
+                        content: "";
+                        clear: both;
+                    }
+                }
+            }
+
+            .show {
+                -webkit-transition: opacity 3s;
+                -moz-transition: opacity 3s;
+                -ms-transition: opacity 3s;
+                -o-transition: opacity 3s;
+                transition: opacity 3s;
+                opacity: 1;
+                display: flex;
+            }
+
+            .goToMarketBtn {
+                background-color: inherit;
+                border: 1px solid white;
+                border-radius: .2rem;
+                color: white;
+                padding: .6rem 1.4rem;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+    
+
+        // RIGHT
+        .graphBox {
+            // outline: 1px solid red;
+            flex: 0 0 30%;
+            position: relative;
+            
+            .graphContainer {
+                // outline: 1px solid cyan;
+                width: 200px;
+                height: 400px;
+                position: absolute;
+                bottom: 0;
+                // graph bar
+                .box {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    margin: 0;
+                    h2 {
+                        position: absolute;
+                        bottom: 0;
+                        transform: translateX(-100%) rotate(180deg);
+                        font-weight: 600;
+                        font-size: 1.6rem;
+                    }
+                    h6 {
+                        position: absolute;
+                        bottom: 2rem;
+                        transform: translateX(-100%) rotate(180deg);
+                        font-weight: 600;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    i.material-icons {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.4rem;
+        font-weight: 100;
+        cursor: pointer;
+    }
+}

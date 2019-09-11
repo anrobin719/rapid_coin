@@ -1,25 +1,28 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 1rem;
-  font-weight: inherit;
-}
-
-ol, ul {
   margin: 0;
   padding: 0;
-  li {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $f-ko-sans;
+  font-weight: 300;
+  background-color: $c-primary-dark;
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1rem;
+    font-weight: inherit;
+  }
+  ol, ul > li {
     list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.noScroll {
+  overflow: hidden;
 }
