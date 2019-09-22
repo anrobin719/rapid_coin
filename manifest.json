@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Rapid Coin",
+    "version": "1.0.0",
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "web_accessible_resources": [
+        "*.png"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+            "js/clock.js",
+            "js/coin.js",
+            "js/coinOrder.js",
+            "js/newsMeetup.js",
+            "js/sideDrawer.js"
+        ]
+    }],
+    "browser_action": {
+        "default_icon": "coin.png",
+        "default_title": "Rapid Coin"
+    },
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+}

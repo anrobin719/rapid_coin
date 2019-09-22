@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900|Noto+Sans:400,700&display=swap|family=Noto+Sans+KR:100,300,400,500,700,900");
 *,
 *::after,
 *::before {
@@ -229,7 +229,9 @@ header {
     line-height: 3rem;
     cursor: pointer; }
   header h1 {
+    font-family: "Heebo", sans-serif;
     font-size: 1.2rem;
+    font-weight: 500;
     line-height: 3rem;
     margin: 0;
     margin-right: 1rem;
@@ -245,6 +247,9 @@ header {
   color: white;
   z-index: 1; }
   #firstPage > h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
     font-size: 2rem;
     font-weight: 300;
@@ -255,7 +260,7 @@ header {
   #firstPage .wrapper {
     position: relative;
     max-width: 100%;
-    top: 50%;
+    top: 48%;
     transform: translateY(-50%);
     min-height: 500px;
     display: flex;
@@ -306,7 +311,8 @@ header {
       #firstPage .wrapper .info .coinTitle {
         display: none;
         font-size: 2rem;
-        margin-bottom: 1rem; }
+        font-weight: 600;
+        margin-bottom: 2rem; }
       #firstPage .wrapper .info .infoListBox {
         display: none;
         position: absolute;
