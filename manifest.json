@@ -22,7 +22,7 @@
         ]
     }],
     "browser_action": {
-        "default_icon": "coin.png",
+        "default_icon": "favicon-152.png",
         "default_title": "Rapid Coin"
     },
     "chrome_url_overrides": {

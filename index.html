@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="icon" href="favicon-152.png" type="image/png" sizes="152x152">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Rapid Coin</title>
 </head>
+
 <body>
     <!-- 헤더 -->
     <header>
@@ -55,7 +57,7 @@
     <!-- 첫번째 페이지 -->
     <section id="firstPage">
         <h2 class="js_defaultMessage">기본으로 설정할 코인을 입력해주세요.</h2>
-    
+
         <div class="wrapper">
             <!-- 왼쪽 검색, 출력 -->
             <section class="js_info info">
@@ -63,9 +65,9 @@
                 <div class="js_clockBox clockBox">
                     <h2 class="js_clock clock">00:00</h2>
                 </div>
-    
+
                 <form class="js_form form" autocomplete="off">
-                    <input list="coins" placeholder="원하는 코인을 입력하세요" name="coin"/>
+                    <input list="coins" placeholder="원하는 코인을 입력하세요" name="coin" />
                     <datalist id="coins">
                         <option value="BTC">비트코인</option>
                         <option value="ETH">이더리움</option>
@@ -83,7 +85,7 @@
                     <button type="submit">확인</button>
                 </form>
                 <h4 class="js_coinTitle coinTitle"></h4>
-    
+
                 <div class="js_infoListBox infoListBox">
                     <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
                     <div class="js_infoList infoList">
@@ -103,10 +105,10 @@
                     <a href="https://coinone.co.kr/exchange/trade/btc/krw">암호화폐 거래소 이동</a>
                 </button>
             </section>
-    
+
             <!-- 오른쪽 그래프 -->
             <section class="js_graphBox graphBox">
-                
+
                 <!-- graph container -->
                 <div class="js_graphContainer graphContainer">
                     <!-- graph bar -->
@@ -125,7 +127,7 @@
                                 <div class="bar"></div>
                             </div>
                             <div class="side left">
-                                <div class="bar"></div> 
+                                <div class="bar"></div>
                             </div>
                             <div class="side bottom"></div>
                         </div>
@@ -136,7 +138,7 @@
 
         <i id="downBtn" class="material-icons">keyboard_arrow_down</i>
     </section><!-- end #firstPage -->
-    
+
 
     <!-- 두번째 페이지 -->
     <section id="secondPage">
@@ -258,4 +260,5 @@
     <script src="js/coinOrder.js"></script>
     <script src="js/newsMeetup.js"></script>
 </body>
+
 </html>

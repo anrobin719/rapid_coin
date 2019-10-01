@@ -20,11 +20,11 @@ function getCoinInfo(coin) {
     })
     .then(json => {
       const infoListObj = {
-        currentPrice: json.last,
-        highestPrice: json.high,
-        lowestPrice: json.low,
-        yHighestPrice: json.yesterday_high,
-        ylowestPrice: json.yesterday_low
+        currentPrice: Math.floor(json.last),
+        highestPrice: Math.floor(json.high),
+        lowestPrice: Math.floor(json.low),
+        yHighestPrice: Math.floor(json.yesterday_high),
+        ylowestPrice: Math.floor(json.yesterday_low)
       };
       // 코인 정보 출력
       const infoVal = infoListBox.querySelector(".js_infoVal");
@@ -34,7 +34,7 @@ function getCoinInfo(coin) {
         infoVal.appendChild(li);
       }
       // 그래프 바 코인, 가격 출력
-      BarCurrentPrice.innerText = json.last;
+      BarCurrentPrice.innerText = Math.floor(json.last);
       BarCurrentCoin.innerText = localStorage.getItem(COIN_FULL_NAME);
     });
 }
