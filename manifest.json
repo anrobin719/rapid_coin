@@ -2,9 +2,22 @@
     "manifest_version": 2,
     "name": "Rapid Coin",
     "version": "1.0.0",
+    "description": "Replace new tab page with a current cryptocurrency exchange infomation and blockchain news",
+    "icons": {
+        "16": "assets/coin16.png",
+        "48": "assets/coin48.png",
+        "128": "assets/coin128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/coin16.png",
+            "48": "assets/coin48.png",
+            "128": "assets/coin128.png"
+        },
+        "default_title": "Rapid Coin"
+    },
     "permissions": [
-        "activeTab",
-        "tabs"
+        "activeTab"
     ],
     "web_accessible_resources": [
         "*.png"
@@ -21,9 +34,8 @@
             "js/sideDrawer.js"
         ]
     }],
-    "browser_action": {
-        "default_icon": "favicon-152.png",
-        "default_title": "Rapid Coin"
+    "background": {
+        "scripts": ["js/background.js"]
     },
     "chrome_url_overrides": {
         "newtab": "index.html"

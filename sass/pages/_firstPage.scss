@@ -1,6 +1,7 @@
 // 첫번째 페이지
 #firstPage {
     background: linear-gradient($c-primary, $c-primary-dark);
+    font-family: $f-en-sans;
     height: 100vh;
     width: 100vw;
     margin-left: auto;
@@ -8,9 +9,6 @@
     box-sizing: border-box;
     color: white;
     z-index: 1;
-    // flex-grow: 1;
-    // flex-shrink: 1;
-    // outline: 1px solid $c-orange;
 
     >h2 {
         position: absolute;
@@ -35,12 +33,12 @@
         min-height: 500px;
         display: flex;
         flex-flow: row wrap;
-        padding: 3rem 6rem;
-        // outline: 1px solid cyan;
+        justify-content: space-between;
+        padding: 3rem 4rem;
 
         // LEFT
         .info {
-            // outline: 1px solid red;
+            // outline: 1px solid cyan;
             flex: 0 0 70%;
             display: flex;
             flex-flow: column;
@@ -50,10 +48,10 @@
             // clock
             .clockBox {
                 .clock {
-                    // outline: 1px solid red;
-                    font-size: 6rem;
-                    font-weight: 700;
-                    margin: 2rem 0;
+                    font-family: $f-ko-sans;
+                    font-size: 7.2rem;
+                    font-weight: 500;
+                    margin: 2rem 0 1rem;
                 }
             }
 
@@ -106,42 +104,6 @@
                 font-size: 2rem;
                 font-weight: 600;
                 margin-bottom: 2rem;
-                // outline: 1px solid red;
-            }
-
-            // 코인 정보 리스트 박스
-            .infoListBox {
-                display: none;
-                position: absolute;
-                bottom: 2rem;
-                right: 1rem;
-                color: $c-primary-bright;
-
-                // outline: 1px solid red;
-
-                // 코인 정보 리스트
-                .infoList {
-                    ul {
-                        float: left;
-                        margin-right: 1rem;
-
-                        >li {
-                            line-height: 1.8rem;
-                        }
-                    }
-
-                    .infoTitle {
-                        text-align: right;
-                    }
-
-                    .infoVal {}
-
-                    &::after {
-                        display: block;
-                        content: "";
-                        clear: both;
-                    }
-                }
             }
 
             .show {
@@ -152,6 +114,10 @@
                 transition: opacity 3s;
                 opacity: 1;
                 display: flex;
+
+                @media screen and (max-width: 1124px) {
+                    display: none;
+                }
             }
 
             .goToMarketBtn {
@@ -171,16 +137,58 @@
 
         // RIGHT
         .graphBox {
-            // outline: 1px solid red;
-            flex: 0 0 30%;
+            // outline: 1px solid cyan;
+            flex: 0 0 25%;
             position: relative;
 
             .graphContainer {
-                // outline: 1px solid cyan;
                 width: 200px;
                 height: 400px;
                 position: absolute;
                 bottom: 0;
+
+                // 코인 정보 리스트 박스
+                .infoListBox {
+                    display: none;
+                    position: absolute;
+                    bottom: 2rem;
+                    left: -1rem;
+                    transform: translateX(-100%);
+                    color: $c-primary-bright;
+
+                    // 코인 정보 리스트
+                    .infoList {
+                        ul {
+                            float: left;
+                            margin-right: 1rem;
+                            font-size: 1rem;
+
+                            >li {
+                                line-height: 1.8rem;
+                            }
+                        }
+
+                        .infoTitle {
+                            text-align: right;
+                        }
+
+                        &::after {
+                            display: block;
+                            content: "";
+                            clear: both;
+                        }
+                    }
+                }
+
+                .show {
+                    -webkit-transition: opacity 3s;
+                    -moz-transition: opacity 3s;
+                    -ms-transition: opacity 3s;
+                    -o-transition: opacity 3s;
+                    transition: opacity 3s;
+                    opacity: 1;
+                    display: flex;
+                }
 
                 // graph bar
                 .box {
@@ -193,7 +201,7 @@
                         position: absolute;
                         bottom: 0;
                         transform: translateX(-100%) rotate(180deg);
-                        font-weight: 600;
+                        font-weight: 800;
                         font-size: 1.6rem;
                     }
 
@@ -201,9 +209,33 @@
                         position: absolute;
                         bottom: 2rem;
                         transform: translateX(-100%) rotate(180deg);
-                        font-weight: 600;
+                        font-weight: 800;
                         font-size: 1rem;
                     }
+                }
+            }
+        }
+
+        @media screen and (max-width: 1124px) {
+            flex-flow: column wrap;
+            padding: 0 6rem;
+
+            .info {
+                margin-bottom: 1rem;
+
+                .goToMarketBtn {
+                    display: none;
+                }
+            }
+
+            .graphBox {
+                width: 100%;
+                margin-bottom: 4rem;
+
+                .graphContainer {
+                    position: relative;
+                    margin: 0 auto;
+                    transform: translateX(50%);
                 }
             }
         }

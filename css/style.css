@@ -6,14 +6,24 @@
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 300;
+  font-size: 1rem;
   background-color: #0a0e1a; }
-  body h1, body h2, body h3, body h4, body h5, body h6 {
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
     font-size: 1rem;
     font-weight: inherit; }
-  body ol, body ul > li {
+  body ol,
+  body ul > li {
     list-style: none; }
   body a {
     text-decoration: none;
@@ -55,20 +65,70 @@ body {
       height: 120px;
       transform: rotateX(-90deg);
       transform-origin: top;
-      background-color: rgba(19, 243, 206, 0.6); }
+      background-color: rgba(19, 243, 206, 0.6);
+      animation: flowLoadingBottom 16s 4.5s ease infinite; }
     .box .progressbar .bar {
       width: 100%;
       height: 0;
       background-color: rgba(19, 243, 206, 0.6);
       box-shadow: 0 0 30px rgba(19, 243, 206, 0.3);
-      animation: loding 4s ease-in-out normal forwards;
+      animation: loading 4s ease-in-out forwards, flowLoading 16s 4.5s ease infinite;
       position: relative; }
 
-@keyframes loding {
+@keyframes loading {
   0% {
     height: 0%; }
   100% {
     height: 100%; } }
+
+@keyframes flowLoading {
+  0% {
+    height: 100%; }
+  13% {
+    height: 85%; }
+  25% {
+    height: 95%;
+    background-color: rgba(19, 236, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 236, 243, 0.3); }
+  38% {
+    height: 85%;
+    background-color: rgba(19, 209, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 209, 243, 0.3); }
+  50% {
+    height: 100%;
+    background-color: rgba(19, 209, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 209, 243, 0.3); }
+  63% {
+    height: 85%;
+    background-color: rgba(19, 180, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 180, 243, 0.3); }
+  75% {
+    height: 95%;
+    background-color: rgba(19, 209, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 209, 243, 0.3); }
+  88% {
+    height: 85%;
+    background-color: rgba(19, 236, 243, 0.6);
+    box-shadow: 0 0 30px rgba(19, 236, 243, 0.3); }
+  100% {
+    height: 100%; } }
+
+@keyframes flowLoadingBottom {
+  0% { }
+  13% { }
+  25% {
+    background-color: rgba(19, 236, 243, 0.6); }
+  38% {
+    background-color: rgba(19, 209, 243, 0.6); }
+  50% {
+    background-color: rgba(19, 209, 243, 0.6); }
+  63% {
+    background-color: rgba(19, 180, 243, 0.6); }
+  75% {
+    background-color: rgba(19, 209, 243, 0.6); }
+  88% {
+    background-color: rgba(19, 236, 243, 0.6); }
+  100% { } }
 
 aside {
   display: block;
@@ -77,6 +137,7 @@ aside {
   top: 0;
   left: 0;
   height: 100vh;
+  overflow: scroll;
   width: 20rem;
   color: white;
   background-color: #0a0b18;
@@ -100,36 +161,42 @@ aside {
       content: "";
       display: block;
       clear: both; }
-  aside .bidList, aside .askList {
+  aside .bidList,
+  aside .askList {
     padding: .3rem 1rem; }
   aside .bidList {
-    color: #42ccf6; }
-  aside .askList {
     color: #fb3e9d; }
-  aside .bidRowTitle, aside .askRowTitle {
+  aside .askList {
+    color: #42ccf6; }
+  aside .bidRowTitle,
+  aside .askRowTitle {
     font-size: .8rem;
     line-height: 2.6rem;
     height: 2.6rem;
     width: 100%;
     display: flex; }
-    aside .bidRowTitle span, aside .askRowTitle span {
+    aside .bidRowTitle span,
+    aside .askRowTitle span {
       flex: 0 0 50%;
       text-align: right;
       padding-right: 1rem;
       border-bottom: 1px solid #0e162e; }
-  aside .bidRow, aside .askRow {
+  aside .bidRow,
+  aside .askRow {
     font-size: .8rem;
     font-weight: 600;
     line-height: 2.6rem;
     height: 2.6rem;
     width: 100%;
     display: flex; }
-    aside .bidRow span, aside .askRow span {
+    aside .bidRow span,
+    aside .askRow span {
       flex: 0 0 50%;
       text-align: right;
       padding-right: 1rem;
       border-bottom: 1px solid #0e162e; }
-    aside .bidRow span:first-child, aside .askRow span:first-child {
+    aside .bidRow span:first-child,
+    aside .askRow span:first-child {
       border-right: 1px solid #0e162e; }
 
 .asideShow {
@@ -239,6 +306,7 @@ header {
 
 #firstPage {
   background: linear-gradient(#0e162e, #0a0e1a);
+  font-family: "Heebo", sans-serif;
   height: 100vh;
   width: 100vw;
   margin-left: auto;
@@ -265,7 +333,8 @@ header {
     min-height: 500px;
     display: flex;
     flex-flow: row wrap;
-    padding: 3rem 6rem; }
+    justify-content: space-between;
+    padding: 3rem 4rem; }
     #firstPage .wrapper .info {
       flex: 0 0 70%;
       display: flex;
@@ -273,9 +342,10 @@ header {
       align-items: center;
       position: relative; }
       #firstPage .wrapper .info .clockBox .clock {
-        font-size: 6rem;
-        font-weight: 700;
-        margin: 2rem 0; }
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 7.2rem;
+        font-weight: 500;
+        margin: 2rem 0 1rem; }
       #firstPage .wrapper .info .form {
         display: none;
         font-size: 1.6rem;
@@ -313,23 +383,6 @@ header {
         font-size: 2rem;
         font-weight: 600;
         margin-bottom: 2rem; }
-      #firstPage .wrapper .info .infoListBox {
-        display: none;
-        position: absolute;
-        bottom: 2rem;
-        right: 1rem;
-        color: #828ba7; }
-        #firstPage .wrapper .info .infoListBox .infoList ul {
-          float: left;
-          margin-right: 1rem; }
-          #firstPage .wrapper .info .infoListBox .infoList ul > li {
-            line-height: 1.8rem; }
-        #firstPage .wrapper .info .infoListBox .infoList .infoTitle {
-          text-align: right; }
-        #firstPage .wrapper .info .infoListBox .infoList::after {
-          display: block;
-          content: "";
-          clear: both; }
       #firstPage .wrapper .info .show {
         -webkit-transition: opacity 3s;
         -moz-transition: opacity 3s;
@@ -338,6 +391,9 @@ header {
         transition: opacity 3s;
         opacity: 1;
         display: flex; }
+        @media screen and (max-width: 1124px) {
+          #firstPage .wrapper .info .show {
+            display: none; } }
       #firstPage .wrapper .info .goToMarketBtn {
         background-color: inherit;
         border: 1px solid white;
@@ -350,13 +406,40 @@ header {
         font-size: 16px;
         cursor: pointer; }
     #firstPage .wrapper .graphBox {
-      flex: 0 0 30%;
+      flex: 0 0 25%;
       position: relative; }
       #firstPage .wrapper .graphBox .graphContainer {
         width: 200px;
         height: 400px;
         position: absolute;
         bottom: 0; }
+        #firstPage .wrapper .graphBox .graphContainer .infoListBox {
+          display: none;
+          position: absolute;
+          bottom: 2rem;
+          left: -1rem;
+          transform: translateX(-100%);
+          color: #828ba7; }
+          #firstPage .wrapper .graphBox .graphContainer .infoListBox .infoList ul {
+            float: left;
+            margin-right: 1rem;
+            font-size: 1rem; }
+            #firstPage .wrapper .graphBox .graphContainer .infoListBox .infoList ul > li {
+              line-height: 1.8rem; }
+          #firstPage .wrapper .graphBox .graphContainer .infoListBox .infoList .infoTitle {
+            text-align: right; }
+          #firstPage .wrapper .graphBox .graphContainer .infoListBox .infoList::after {
+            display: block;
+            content: "";
+            clear: both; }
+        #firstPage .wrapper .graphBox .graphContainer .show {
+          -webkit-transition: opacity 3s;
+          -moz-transition: opacity 3s;
+          -ms-transition: opacity 3s;
+          -o-transition: opacity 3s;
+          transition: opacity 3s;
+          opacity: 1;
+          display: flex; }
         #firstPage .wrapper .graphBox .graphContainer .box {
           position: absolute;
           left: 0;
@@ -366,14 +449,29 @@ header {
             position: absolute;
             bottom: 0;
             transform: translateX(-100%) rotate(180deg);
-            font-weight: 600;
+            font-weight: 800;
             font-size: 1.6rem; }
           #firstPage .wrapper .graphBox .graphContainer .box h6 {
             position: absolute;
             bottom: 2rem;
             transform: translateX(-100%) rotate(180deg);
-            font-weight: 600;
+            font-weight: 800;
             font-size: 1rem; }
+    @media screen and (max-width: 1124px) {
+      #firstPage .wrapper {
+        flex-flow: column wrap;
+        padding: 0 6rem; }
+        #firstPage .wrapper .info {
+          margin-bottom: 1rem; }
+          #firstPage .wrapper .info .goToMarketBtn {
+            display: none; }
+        #firstPage .wrapper .graphBox {
+          width: 100%;
+          margin-bottom: 4rem; }
+          #firstPage .wrapper .graphBox .graphContainer {
+            position: relative;
+            margin: 0 auto;
+            transform: translateX(50%); } }
   #firstPage i.material-icons {
     position: absolute;
     bottom: 2rem;
@@ -386,6 +484,7 @@ header {
 #secondPage {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   padding-top: 5rem;
   box-sizing: border-box;
   color: #343a40;
@@ -416,9 +515,11 @@ header {
       height: 6rem;
       display: flex;
       cursor: pointer; }
-      #secondPage .wrapper article .img, #secondPage .wrapper article .date {
+      #secondPage .wrapper article .img,
+      #secondPage .wrapper article .date {
         flex: 0 0 30%; }
-        #secondPage .wrapper article .img img, #secondPage .wrapper article .date img {
+        #secondPage .wrapper article .img img,
+        #secondPage .wrapper article .date img {
           object-fit: cover; }
       #secondPage .wrapper article .date {
         display: flex;
@@ -445,15 +546,23 @@ header {
           font-size: .8rem;
           line-height: 1.6rem;
           color: #8f979e; }
-    #secondPage .wrapper .news, #secondPage .wrapper .meetup {
+    #secondPage .wrapper .news,
+    #secondPage .wrapper .meetup {
       flex: 0 0 50%;
       display: flex;
       flex-flow: column;
       justify-content: space-around;
       padding: 0 4rem;
       box-sizing: border-box; }
-      #secondPage .wrapper .news > div, #secondPage .wrapper .meetup > div {
+      #secondPage .wrapper .news > div,
+      #secondPage .wrapper .meetup > div {
         text-align: right;
         padding-right: 1rem; }
     #secondPage .wrapper .news {
       border-right: 1px solid #eceef0; }
+    @media screen and (max-width: 1124px) {
+      #secondPage .wrapper {
+        flex-flow: column;
+        overflow: scroll; }
+        #secondPage .wrapper article {
+          margin-bottom: 1rem; } }

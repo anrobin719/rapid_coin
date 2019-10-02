@@ -31,8 +31,6 @@ function printArticle(modal, article) {
 }
 
 function showModal(article) {
-  console.log(article);
-
   modalBox.classList.add(SHOW_MODAL_CN);
   document.body.classList.add("noScroll");
 
@@ -72,7 +70,6 @@ function getNews() {
     })
     .then(json => {
       news = json.data.slice(0, 3);
-      console.log(news);
       for (let i = 0; i < news.length; i++) {
         newsImg[i].setAttribute("src", news[i].thumbnail);
         newsTitle[i].innerText = news[i].title;
@@ -93,8 +90,6 @@ function getMeetup() {
     })
     .then(json => {
       meetup = json.data.slice(0, 3);
-      console.log(meetup);
-      console.log(meetupEndDate);
       for (let i = 0; i < meetup.length; i++) {
         meetupTitle[i].innerText = meetup[i].title;
         meetupStartDate[i].innerText = meetup[i].start_day;

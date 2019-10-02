@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon-152.png" type="image/png" sizes="152x152">
+    <link rel="icon" href="assets/coin128.png" type="image/png" sizes="128x128">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
@@ -26,37 +26,27 @@
             <i id="closeBtn" class="material-icons">keyboard_arrow_left </i>
         </div>
 
-        <section class="js_bidList bidList">
-            <div class="js_bidRowTitle bidRowTitle">
-                <span>매도가격</span>
-                <span>수량</span>
+        <section class="askList">
+            <div class="askRowTitle">
+                <span>Sell Price</span>
+                <span>Sell Amount</span>
             </div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
-            <div class="js_bidRow bidRow"></div>
+            <!-- 매도 가격, 수량 리스트 박스입니다. -->
+            <div class="js_askRowList"></div>
         </section>
-        <section class="js_askList askList">
-            <div class="js_askRowTitle askRowTitle">
-                <span>매수가격</span>
-                <span>수량</span>
+        <section class="bidList">
+            <div class="bidRowTitle">
+                <span>But Price</span>
+                <span>Buy Amount</span>
             </div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
-            <div class="js_askRow askRow"></div>
+            <!-- 매수 가격, 수량 리스트 박스입니다. -->
+            <div class="js_bidRowList"></div>
         </section>
     </aside>
 
     <!-- 첫번째 페이지 -->
     <section id="firstPage">
-        <h2 class="js_defaultMessage">기본으로 설정할 코인을 입력해주세요.</h2>
+        <h2 class="js_defaultMessage">Please enter a coin name to set as default</h2>
 
         <div class="wrapper">
             <!-- 왼쪽 검색, 출력 -->
@@ -67,42 +57,27 @@
                 </div>
 
                 <form class="js_form form" autocomplete="off">
-                    <input list="coins" placeholder="원하는 코인을 입력하세요" name="coin" />
+                    <input list="coins" placeholder="Enter coin name" name="coin" />
                     <datalist id="coins">
-                        <option value="BTC">비트코인</option>
-                        <option value="ETH">이더리움</option>
-                        <option value="XRP">리플</option>
-                        <option value="EOS">이오스</option>
-                        <option value="ATOM">코스모스아톰</option>
-                        <option value="LUNA">루나</option>
-                        <option value="QTUM">퀀텀</option>
-                        <option value="XTZ">테조스</option>
-                        <option value="HINT">힌트체인</option>
-                        <option value="XLM">스텔라루멘</option>
-                        <option value="NEO">네오</option>
-                        <option value="OMG">오미세고</option>
+                        <option value="BTC">Bitcoin</option>
+                        <option value="ETH">Ethereum</option>
+                        <option value="XRP">Ripple</option>
+                        <option value="EOS">EOS</option>
+                        <option value="ATOM">Cosmos ATOM</option>
+                        <option value="LUNA">Luna</option>
+                        <option value="QTUM">Qtum</option>
+                        <option value="XTZ">Tezos</option>
+                        <option value="HINT">Hintchain</option>
+                        <option value="XLM">Stellar Lumens</option>
+                        <option value="NEO">NEO</option>
+                        <option value="OMG">OmiseGO</option>
                     </datalist>
-                    <button type="submit">확인</button>
+                    <button type="submit">SUBMIT</button>
                 </form>
                 <h4 class="js_coinTitle coinTitle"></h4>
 
-                <div class="js_infoListBox infoListBox">
-                    <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
-                    <div class="js_infoList infoList">
-                        <ul class="infoTitle">
-                            <li>현재가 : </li>
-                            <li>고가 : </li>
-                            <li>저가 : </li>
-                            <li>전일 최고가 : </li>
-                            <li>전일 최저가 : </li>
-                        </ul>
-                        <ul class="js_infoVal infoVal">
-                            <!-- fetch infoValue -->
-                        </ul>
-                    </div>
-                </div>
                 <button class="js_goToMarketBtn goToMarketBtn">
-                    <a href="https://coinone.co.kr/exchange/trade/btc/krw">암호화폐 거래소 이동</a>
+                    <a href="https://coinone.co.kr/exchange/trade/btc/krw">Cryptocurrency Exchange</a>
                 </button>
             </section>
 
@@ -111,6 +86,21 @@
 
                 <!-- graph container -->
                 <div class="js_graphContainer graphContainer">
+                    <div class="js_infoListBox infoListBox">
+                        <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
+                        <div class="js_infoList infoList">
+                            <ul class="infoTitle">
+                                <li>Price : </li>
+                                <li>High : </li>
+                                <li>Low : </li>
+                                <li>Yesterday High : </li>
+                                <li>Yesterday Low : </li>
+                            </ul>
+                            <ul class="js_infoVal infoVal">
+                                <!-- fetch infoValue -->
+                            </ul>
+                        </div>
+                    </div>
                     <!-- graph bar -->
                     <div class="box">
                         <div class="progressbar">
@@ -136,13 +126,13 @@
             </section>
         </div><!-- end .wrapper -->
 
-        <i id="downBtn" class="material-icons">keyboard_arrow_down</i>
+        <i id="downBtn" class="material-icons"><a href="#secondPage">keyboard_arrow_down</a></i>
     </section><!-- end #firstPage -->
 
 
     <!-- 두번째 페이지 -->
     <section id="secondPage">
-        <i id="upBtn" class="material-icons">keyboard_arrow_up</i>
+        <i id="upBtn" class="material-icons"><a href="#firstPage">keyboard_arrow_up</a></i>
 
         <div class="modalBox">
             <!-- 뉴스모달 -->
@@ -201,7 +191,7 @@
                         <h4></h4>
                     </div>
                 </article>
-                <div><a href="https://www.cryptohub.or.kr/news">더보기</a></div>
+                <div><a href="https://www.cryptohub.or.kr/news">More ></a></div>
             </div>
 
             <!-- 밋업 소식 -->
@@ -247,7 +237,7 @@
                         <h4></h4>
                     </div>
                 </article>
-                <div><a href="https://www.cryptohub.or.kr/meetup">더보기</a></div>
+                <div><a href="https://www.cryptohub.or.kr/meetup">More ></a></div>
             </div>
         </div>
     </section>

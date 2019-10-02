@@ -2,6 +2,7 @@
 #secondPage {
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     padding-top: 5rem;
     box-sizing: border-box;
     color: $c-gray-8;
@@ -27,7 +28,7 @@
         max-width: 90%;
         padding: 3rem 0;
         background-color: #fff;
-        // outline: 1px solid cyan;
+
         h2 {
             font-size: 2rem;
             font-weight: 300;
@@ -35,14 +36,14 @@
         }
 
         article {
-            // outline: 1px solid cyan;
             height: 6rem;
             display: flex;
             cursor: pointer;
 
-            .img, .date {
-                // outline: 1px solid red;
+            .img,
+            .date {
                 flex: 0 0 30%;
+
                 img {
                     object-fit: cover;
                 }
@@ -59,7 +60,6 @@
             }
 
             .contents {
-                // outline: 1px solid red;
                 flex: 0 0 70%;
                 display: flex;
                 flex-flow: column;
@@ -71,10 +71,12 @@
                     font-size: 1rem;
                     line-height: 1.6rem;
                 }
+
                 h6 {
                     font-size: .8rem;
                     font-weight: 300;
                 }
+
                 span {
                     font-size: .8rem;
                     line-height: 1.6rem;
@@ -83,30 +85,32 @@
             }
         }
 
-        .news, .meetup {
+        .news,
+        .meetup {
             flex: 0 0 50%;
             display: flex;
             flex-flow: column;
             justify-content: space-around;
             padding: 0 4rem;
             box-sizing: border-box;
-            // outline: 1px solid red;
-            > div {
+
+            >div {
                 text-align: right;
                 padding-right: 1rem;
             }
         }
-        
+
         .news {
             border-right: 1px solid $c-gray-2;
         }
 
-        // .meetup {
-        //     article {
-        //         .contents {
-        //             flex: 0 0 100%;
-        //         }
-        //     }
-        // }
+        @media screen and (max-width: 1124px) {
+            flex-flow: column;
+            overflow: scroll;
+
+            article {
+                margin-bottom: 1rem;
+            }
+        }
     }
 }
