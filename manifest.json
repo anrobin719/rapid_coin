@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "Rapid Coin",
-    "version": "1.0.0",
-    "description": "Replace new tab page with a current cryptocurrency exchange infomation and blockchain news",
+    "version": "2",
+    "description": "Current cryptocurrency exchange information and Blockchain news.",
     "icons": {
         "16": "assets/coin16.png",
         "48": "assets/coin48.png",
@@ -16,9 +16,6 @@
         },
         "default_title": "Rapid Coin"
     },
-    "permissions": [
-        "activeTab"
-    ],
     "web_accessible_resources": [
         "*.png"
     ],
@@ -39,5 +36,6 @@
     },
     "chrome_url_overrides": {
         "newtab": "index.html"
-    }
+    },
+    "permissions": ["activeTab"]
 }

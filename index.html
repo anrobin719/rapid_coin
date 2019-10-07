@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,114 +12,115 @@
 </head>
 
 <body>
-    <!-- 헤더 -->
+    <!-- HEADER -->
     <header>
         <i id="openBtn" class="material-icons">sort</i>
         <h1>Rapid Coin</h1>
         <nav></nav>
     </header>
 
-    <!-- 사이드 드로우 -->
-    <aside>
-        <div class="asideHead">
+    <!-- SIDE DRAWER -->
+    <aside class="side-drawer">
+        <div class="side-drawer__head">
             <h2></h2>
             <i id="closeBtn" class="material-icons">keyboard_arrow_left </i>
         </div>
 
-        <section class="askList">
-            <div class="askRowTitle">
+        <section class="side-drawer__ask-list">
+            <div class="side-drawer__ask-title">
                 <span>Sell Price</span>
                 <span>Sell Amount</span>
             </div>
-            <!-- 매도 가격, 수량 리스트 박스입니다. -->
-            <div class="js_askRowList"></div>
+            <!-- SELL PRICE, AMOUNT LIST BOX -->
+            <div class="side-drawer__ask-value"></div>
         </section>
-        <section class="bidList">
-            <div class="bidRowTitle">
-                <span>But Price</span>
+        <section class="side-drawer__bid-list">
+            <div class="side-drawer__bid-title">
+                <span>Buy Price</span>
                 <span>Buy Amount</span>
             </div>
-            <!-- 매수 가격, 수량 리스트 박스입니다. -->
-            <div class="js_bidRowList"></div>
+            <!-- BUY PRICE, AMOUNT LIST BOX -->
+            <div class="side-drawer__bid-value"></div>
         </section>
     </aside>
 
-    <!-- 첫번째 페이지 -->
+    <!-- FIRST PAGE -->
     <section id="firstPage">
-        <h2 class="js_defaultMessage">Please enter a coin name to set as default</h2>
+        <h2 class="default-message">Please enter a coin name to set as default</h2>
 
         <div class="wrapper">
-            <!-- 왼쪽 검색, 출력 -->
-            <section class="js_info info">
-                <!-- 검색 코인 인풋, 출력 -->
-                <div class="js_clockBox clockBox">
-                    <h2 class="js_clock clock">00:00</h2>
+            <!-- COIN SEARCH & OUTPUT. LEFT SIDE -->
+            <section class="info-section">
+                <!-- CLOCK, COIN SEARCH INPUT & OUTPUT -->
+                <div class="info-section__clockBox">
+                    <h2 class="info-section__clock">00:00</h2>
                 </div>
 
-                <form class="js_form form" autocomplete="off">
+                <form class="info-section__coin-list-form" autocomplete="off">
                     <input list="coins" placeholder="Enter coin name" name="coin" />
                     <datalist id="coins">
                         <option value="BTC">Bitcoin</option>
                         <option value="ETH">Ethereum</option>
                         <option value="XRP">Ripple</option>
-                        <option value="EOS">EOS</option>
+                        <option value="EOS">Eos</option>
                         <option value="ATOM">Cosmos ATOM</option>
                         <option value="LUNA">Luna</option>
+                        <option value="ETC">Ethereum Classic</option>
                         <option value="QTUM">Qtum</option>
                         <option value="XTZ">Tezos</option>
                         <option value="HINT">Hintchain</option>
                         <option value="XLM">Stellar Lumens</option>
-                        <option value="NEO">NEO</option>
+                        <option value="NEO">Neo</option>
                         <option value="OMG">OmiseGO</option>
                     </datalist>
                     <button type="submit">SUBMIT</button>
                 </form>
-                <h4 class="js_coinTitle coinTitle"></h4>
+                <h4 class="info-section__coinTitle"></h4>
 
-                <button class="js_goToMarketBtn goToMarketBtn">
+                <button class="info-section__exchange-button">
                     <a href="https://coinone.co.kr/exchange/trade/btc/krw">Cryptocurrency Exchange</a>
                 </button>
             </section>
 
-            <!-- 오른쪽 그래프 -->
-            <section class="js_graphBox graphBox">
+            <!-- GRAPH. RIGHT SIDE -->
+            <section class="graph-section">
 
-                <!-- graph container -->
-                <div class="js_graphContainer graphContainer">
-                    <div class="js_infoListBox infoListBox">
-                        <!-- 검색 코인에 대한 정보 : 시세 확인, 오늘 최고가, 최저가 -->
-                        <div class="js_infoList infoList">
-                            <ul class="infoTitle">
+                <!-- GRAPH CONTAINER -->
+                <div class="graph-section__graph-container">
+                    <div class="graph-section__info-list-box">
+                        <!-- OUTPUT ABOUT COIN PRICE, HIGH, LOW ... -->
+                        <div class="graph-section__info-list">
+                            <ul class="graph-section__info-list--info-title">
                                 <li>Price : </li>
                                 <li>High : </li>
                                 <li>Low : </li>
                                 <li>Yesterday High : </li>
                                 <li>Yesterday Low : </li>
                             </ul>
-                            <ul class="js_infoVal infoVal">
+                            <ul class="graph-section__info-list--info-value">
                                 <!-- fetch infoValue -->
                             </ul>
                         </div>
                     </div>
-                    <!-- graph bar -->
+                    <!-- GRAPH BAR -->
                     <div class="box">
                         <div class="progressbar">
-                            <div class="side front">
-                                <div class="bar">
-                                    <h2 class="js_BarCurrentPrice"></h2>
-                                    <h6 class="js_BarCurrentCoin"></h6>
+                            <div class="progressbar__side progressbar__front">
+                                <div class="progressbar__bar">
+                                    <h2 class="progressbar__current-price"></h2>
+                                    <h6 class="progressbar__current-coin"></h6>
                                 </div>
                             </div>
-                            <div class="side right">
-                                <div class="bar"></div>
+                            <div class="progressbar__side progressbar__right">
+                                <div class="progressbar__bar"></div>
                             </div>
-                            <div class="side back">
-                                <div class="bar"></div>
+                            <div class="progressbar__side progressbar__back">
+                                <div class="progressbar__bar"></div>
                             </div>
-                            <div class="side left">
-                                <div class="bar"></div>
+                            <div class="progressbar__side progressbar__left">
+                                <div class="progressbar__bar"></div>
                             </div>
-                            <div class="side bottom"></div>
+                            <div class="progressbar__side progressbar__bottom"></div>
                         </div>
                     </div>
                 </div>
@@ -130,125 +131,97 @@
     </section><!-- end #firstPage -->
 
 
-    <!-- 두번째 페이지 -->
+    <!-- SECOND PAGE -->
     <section id="secondPage">
         <i id="upBtn" class="material-icons"><a href="#firstPage">keyboard_arrow_up</a></i>
 
+        <!-- MODAL -->
         <div class="modalBox">
-            <!-- 뉴스모달 -->
-            <div class="modal newsModal js_newsModal">
-                <h4></h4>
-                <div class="sub">
-                    <span class="date"></span>
-                    <span class="author"></span>
+            <div class="modal">
+                <h4 class="modal__title"></h4>
+                <div class="modal__sub">
+                    <span class="modal__sub--date"></span>
+                    <span class="modal__sub--tag"></span>
                 </div>
-                <div class="newsModalImgBox">
+                <div class="modal__img">
                     <img>
                 </div>
-                <div class="newsModalContentBox js_newsModalContentBox">
+                <div class="modal__contents">
                 </div>
-            </div>
-            <!-- 밋업모달 -->
-            <div class="modal meetupModal js_meetupModal">
-                <div class="meetupModalTitleBox js_meetupModalTitleBox">
-                    <strong class="js_month">8</strong><strong>/</strong><strong class="js_day">23</strong>
-                    <h4>
-                        제목
-                    </h4>
-                </div>
-                <div class="meetupModalContentBox js_meetupModalContentBox">
-                    컨텐츠
-                </div>
-                <div class="meetupModalBtnBox">
-                    <a>홈페이지 바로가기</a>
+                <div class="modal__button">
+                    <a>View whole article</a>
                 </div>
             </div>
         </div>
 
+        <!-- WHITE CONTENTS BOX -->
         <div class="wrapper">
-            <!-- 최신 뉴스 -->
-            <div class="js_news news">
-                <h2>News</h2>
+            <!-- BLOCK CHAIN -->
+            <div class="blockChain">
+                <h2 class="blockChain__mainTitle">Block Chain</h2>
 
-                <article>
-                    <div class="js_img img"><img width="100%" height="100%" alt=""></div>
-                    <div class="js_contents contents">
-                        <span></span>
-                        <h4></h4>
+                <article class="blockChain__article">
+                    <div class="blockChain__img"><img width="100%" height="100%" alt=""></div>
+                    <div class="blockChain__contents">
+                        <span class="blockChain__contents--date"></span>
+                        <h4 class="blockChain__contents--title"></h4>
                     </div>
                 </article>
-                <article>
-                    <div class="js_img img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="js_contents contents">
-                        <span></span>
-                        <h4></h4>
+                <article class="blockChain__article">
+                    <div class="blockChain__img"><img width="100%" height="100%" src="" alt=""></div>
+                    <div class="blockChain__contents">
+                        <span class="blockChain__contents--date"></span>
+                        <h4 class="blockChain__contents--title"></h4>
                     </div>
                 </article>
-                <article>
-                    <div class="js_img img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="js_contents contents">
-                        <span></span>
-                        <h4></h4>
+                <article class="blockChain__article">
+                    <div class="blockChain__img"><img width="100%" height="100%" src="" alt=""></div>
+                    <div class="blockChain__contents">
+                        <span class="blockChain__contents--date"></span>
+                        <h4 class="blockChain__contents--title"></h4>
                     </div>
                 </article>
-                <div><a href="https://www.cryptohub.or.kr/news">More ></a></div>
+                <div class="ico__more-button"><a href="https://www.cryptohub.or.kr/news">More ></a></div>
             </div>
 
-            <!-- 밋업 소식 -->
-            <div class="js_meetup meetup">
-                <h2>Meetup</h2>
+            <!-- ICO -->
+            <div class="ico">
+                <h2 class="ico__mainTitle">ICO</h2>
 
-                <article>
-                    <div class="js_date date">
-                        <span class="js_articleMonth">8</span><span>/</span><span class="js_articleDay">23</span>
-                    </div>
-                    <div class="js_contents contents">
-                        <h6>
-                            <span class="js_startDate"></span>
-                            <span>~</span>
-                            <span class="js_endDate"></span>
-                        </h6>
-                        <h4></h4>
+                <article class="ico__article">
+                    <div class="ico__img"><img width="100%" height="100%" alt=""></div>
+                    <div class="ico__contents">
+                        <span class="ico__contents--date"></span>
+                        <h4 class="ico__contents--title"></h4>
                     </div>
                 </article>
-                <article>
-                    <div class="js_date date">
-                        <span class="js_articleMonth">8</span><span>/</span><span class="js_articleDay">23</span>
-                    </div>
-                    <div class="js_contents contents">
-                        <h6>
-                            <span class="js_startDate"></span>
-                            <span>~</span>
-                            <span class="js_endDate"></span>
-                        </h6>
-                        <h4></h4>
+                <article class="ico__article">
+                    <div class="ico__img"><img width="100%" height="100%" src="" alt=""></div>
+                    <div class="ico__contents">
+                        <span class="ico__contents--date"></span>
+                        <h4 class="ico__contents--title"></h4>
                     </div>
                 </article>
-                <article>
-                    <div class="js_date date">
-                        <span class="js_articleMonth">8</span><span>/</span><span class="js_articleDay">23</span>
-                    </div>
-                    <div class="js_contents contents">
-                        <h6>
-                            <span class="js_startDate"></span>
-                            <span>~</span>
-                            <span class="js_endDate"></span>
-                        </h6>
-                        <h4></h4>
+                <article class="ico__article">
+                    <div class="ico__img"><img width="100%" height="100%" src="" alt=""></div>
+                    <div class="ico__contents">
+                        <span class="ico__contents--date"></span>
+                        <h4 class="ico__contents--title"></h4>
                     </div>
                 </article>
-                <div><a href="https://www.cryptohub.or.kr/meetup">More ></a></div>
+                <div class="ico__more-button"><a href="https://www.cryptohub.or.kr/news">More ></a></div>
             </div>
         </div>
     </section>
 
 
     <!-- scripts -->
+    <script src="./node_modules/moment/moment.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/coin.js"></script>
     <script src="js/sideDrawer.js"></script>
     <script src="js/coinOrder.js"></script>
-    <script src="js/newsMeetup.js"></script>
+    <script src="js/cryptoNews.js"></script>
 </body>
 
 </html>

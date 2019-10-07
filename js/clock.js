@@ -1,4 +1,4 @@
-const clock = document.querySelector(".js_clock");
+const clock = document.querySelector(".info-section__clock");
 
 function getTime() {
   const date = new Date();
@@ -6,7 +6,7 @@ function getTime() {
   const minuites = date.getMinutes();
   const seconds = date.getSeconds();
 
-  clock.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${
+  clock.innerText = `${hours < 10 ? `0${hours}` : hours}:${
     minuites < 10 ? `0${minuites}` : minuites
   }:${seconds < 10 ? `0${seconds}` : seconds}`;
 }

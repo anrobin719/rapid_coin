@@ -29,64 +29,8 @@
         padding: 3rem 0;
         background-color: #fff;
 
-        h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin: 2rem auto 1rem;
-        }
-
-        article {
-            height: 6rem;
-            display: flex;
-            cursor: pointer;
-
-            .img,
-            .date {
-                flex: 0 0 30%;
-
-                img {
-                    object-fit: cover;
-                }
-            }
-
-            .date {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 2rem;
-                font-weight: 600;
-                color: $c-up;
-                border: 1px solid $c-gray-2;
-            }
-
-            .contents {
-                flex: 0 0 70%;
-                display: flex;
-                flex-flow: column;
-                padding-left: 1rem;
-                position: relative;
-
-                h4 {
-                    font-weight: 600;
-                    font-size: 1rem;
-                    line-height: 1.6rem;
-                }
-
-                h6 {
-                    font-size: .8rem;
-                    font-weight: 300;
-                }
-
-                span {
-                    font-size: .8rem;
-                    line-height: 1.6rem;
-                    color: $c-gray-6;
-                }
-            }
-        }
-
-        .news,
-        .meetup {
+        .blockChain,
+        .ico {
             flex: 0 0 50%;
             display: flex;
             flex-flow: column;
@@ -94,13 +38,55 @@
             padding: 0 4rem;
             box-sizing: border-box;
 
-            >div {
+            &__mainTitle {
+                font-size: 2rem;
+                font-weight: 300;
+                margin: 2rem auto 1rem;
+            }
+
+            &__article {
+                height: 6rem;
+                display: flex;
+                cursor: pointer;
+            }
+
+            &__img {
+                flex: 0 0 30%;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            &__contents {
+                flex: 0 0 70%;
+                display: flex;
+                flex-flow: column;
+                padding-left: 1rem;
+                position: relative;
+
+                &--date {
+                    font-size: .8rem;
+                    line-height: 1.6rem;
+                    color: $c-gray-6;
+                }
+
+                &--title {
+                    font-weight: 600;
+                    font-size: 1rem;
+                    line-height: 1.6rem;
+                }
+            }
+
+            &__more-button {
                 text-align: right;
                 padding-right: 1rem;
             }
         }
 
-        .news {
+
+
+        .blockChain {
             border-right: 1px solid $c-gray-2;
         }
 

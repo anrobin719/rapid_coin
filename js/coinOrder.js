@@ -1,6 +1,6 @@
-const asideHeadTitle = document.querySelector(".asideHead > h2");
-const askRowList = document.querySelector(".js_askRowList");
-const bidRowList = document.querySelector(".js_bidRowList");
+const asideHeadTitle = document.querySelector(".side-drawer__head > h2");
+const askRowList = document.querySelector(".side-drawer__ask-value");
+const bidRowList = document.querySelector(".side-drawer__bid-value");
 
 function setList(list, type) {
   for (let i = 0; i < list.length; i++) {
@@ -14,12 +14,12 @@ function setList(list, type) {
 
     let rowEl = document.createElement("div");
     if (type === "ask") {
-      rowEl.setAttribute("class", "js_askRow askRow");
+      rowEl.setAttribute("class", "side-drawer__askRow");
       rowEl.appendChild(priceEl);
       rowEl.appendChild(qtyEl);
       askRowList.appendChild(rowEl);
     } else {
-      rowEl.setAttribute("class", "js_bidRow bidRow");
+      rowEl.setAttribute("class", "side-drawer__bidRow");
       rowEl.appendChild(priceEl);
       rowEl.appendChild(qtyEl);
       bidRowList.appendChild(rowEl);

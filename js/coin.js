@@ -1,17 +1,16 @@
-const defaultMessage = document.querySelector(".js_defaultMessage"),
-  form = document.querySelector(".js_form"),
+const defaultMessage = document.querySelector(".default-message"),
+  form = document.querySelector(".info-section__coin-list-form"),
   input = form.querySelector("input"),
-  coinTitle = document.querySelector(".js_coinTitle"),
-  infoListBox = document.querySelector(".infoListBox"),
-  goToMarketBtn = document.querySelector(".js_goToMarketBtn"),
+  coinTitle = document.querySelector(".info-section__coinTitle"),
+  goToMarketBtn = document.querySelector(".info-section__exchange-button"),
+  infoListBox = document.querySelector(".graph-section__info-list-box"),
   marketAnchor = goToMarketBtn.querySelector("a"),
-  BarCurrentPrice = document.querySelector(".js_BarCurrentPrice"),
-  BarCurrentCoin = document.querySelector(".js_BarCurrentCoin");
+  BarCurrentPrice = document.querySelector(".progressbar__current-price"),
+  BarCurrentCoin = document.querySelector(".progressbar__current-coin");
 
 const SHOWING_CN = "show",
   COIN_NAME = "coinName",
-  COIN_FULL_NAME = "coinFullName",
-  COIN_KOREAN_NAME = "coinKoreanName";
+  COIN_FULL_NAME = "coinFullName";
 
 function getCoinInfo(coin) {
   fetch(`https://api.coinone.co.kr/ticker/?currency=${coin}`)
@@ -26,14 +25,16 @@ function getCoinInfo(coin) {
         yHighestPrice: Math.floor(json.yesterday_high),
         ylowestPrice: Math.floor(json.yesterday_low)
       };
-      // 코인 정보 출력
-      const infoVal = infoListBox.querySelector(".js_infoVal");
+      // RENDER - COIN INFO
+      const infoVal = infoListBox.querySelector(
+        ".graph-section__info-list--info-value"
+      );
       for (let key in infoListObj) {
         const li = document.createElement("li");
         li.innerText = infoListObj[key];
         infoVal.appendChild(li);
       }
-      // 그래프 바 코인, 가격 출력
+      // RENDER - GRAPH PRICE
       BarCurrentPrice.innerText = Math.floor(json.last);
       BarCurrentCoin.innerText = localStorage.getItem(COIN_FULL_NAME);
     });
@@ -58,55 +59,45 @@ function handleSubmit(e) {
   e.preventDefault();
 
   let coinFullName = null;
-  let coinKoreanName = null;
   switch (input.value) {
     case "BTC":
       coinFullName = "Bitcoin";
-      coinKoreanName = "비트코인";
       break;
     case "ETH":
       coinFullName = "Ethereum";
-      coinKoreanName = "이더리움";
       break;
     case "XRP":
       coinFullName = "Ripple";
-      coinKoreanName = "리플";
       break;
     case "EOS":
       coinFullName = "EOS";
-      coinKoreanName = "이오스";
       break;
     case "ATOM":
       coinFullName = "Cosmos ATOM";
-      coinKoreanName = "코스모스아톰";
       break;
     case "LUNA":
       coinFullName = "Luna";
-      coinKoreanName = "루나";
+      break;
+    case "ETC":
+      coinFullName = "Ethereum Classic";
       break;
     case "QTUM":
       coinFullName = "Qtum";
-      coinKoreanName = "퀀텀";
       break;
     case "XTZ":
       coinFullName = "Tezos";
-      coinKoreanName = "테조스";
       break;
     case "HINT":
       coinFullName = "Hintchain";
-      coinKoreanName = "비트코인";
       break;
     case "XLM":
       coinFullName = "Stellar Lumens";
-      coinKoreanName = "스텔라루멘";
       break;
     case "NEO":
       coinFullName = "NEO";
-      coinKoreanName = "네오";
       break;
     case "OMG":
       coinFullName = "OmiseGO";
-      coinKoreanName = "오미세고";
       break;
     default:
       coinFullName;
@@ -114,7 +105,6 @@ function handleSubmit(e) {
 
   localStorage.setItem(COIN_NAME, input.value);
   localStorage.setItem(COIN_FULL_NAME, coinFullName);
-  localStorage.setItem(COIN_KOREAN_NAME, coinKoreanName);
   paintCoin();
 }
 

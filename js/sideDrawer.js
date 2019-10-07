@@ -1,6 +1,6 @@
 const openBtn = document.querySelector("#openBtn");
 const closeBtn = document.querySelector("#closeBtn");
-const sideDrawer = document.querySelector("aside");
+const sideDrawer = document.querySelector(".side-drawer");
 const firstPage = document.querySelector("#firstPage");
 
 function handleOpenSideDrawer() {

@@ -10,7 +10,7 @@
     color: white;
     z-index: 1;
 
-    >h2 {
+    .default-message {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -36,8 +36,8 @@
         justify-content: space-between;
         padding: 3rem 4rem;
 
-        // LEFT
-        .info {
+        // COIN SEARCH & OUTPUT. LEFT SIDE
+        .info-section {
             // outline: 1px solid cyan;
             flex: 0 0 70%;
             display: flex;
@@ -45,18 +45,16 @@
             align-items: center;
             position: relative;
 
-            // clock
-            .clockBox {
-                .clock {
-                    font-family: $f-ko-sans;
-                    font-size: 7.2rem;
-                    font-weight: 500;
-                    margin: 2rem 0 1rem;
-                }
+            // CLOCK
+            &__clock {
+                font-family: $f-ko-sans;
+                font-size: 7.2rem;
+                font-weight: 500;
+                margin: 2rem 0 1rem;
             }
 
-            // 첫 시작시 정보 입력
-            .form {
+            // COIN SEARCH INPUT
+            &__coin-list-form {
                 display: none;
                 font-size: 1.6rem;
                 margin-bottom: 3rem;
@@ -98,12 +96,25 @@
                 }
             }
 
-            // 코인 이름 출력
-            .coinTitle {
+            // COIN SEARCH OUTPUT
+            &__coinTitle {
                 display: none;
                 font-size: 2rem;
                 font-weight: 600;
                 margin-bottom: 2rem;
+            }
+
+            &__exchange-button {
+                background-color: inherit;
+                border: 1px solid white;
+                border-radius: .2rem;
+                color: white;
+                padding: .6rem 1.4rem;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
             }
 
             .show {
@@ -119,66 +130,20 @@
                     display: none;
                 }
             }
-
-            .goToMarketBtn {
-                background-color: inherit;
-                border: 1px solid white;
-                border-radius: .2rem;
-                color: white;
-                padding: .6rem 1.4rem;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-            }
         }
 
 
-        // RIGHT
-        .graphBox {
+        // GRAPH. RIGHT SIDE
+        .graph-section {
             // outline: 1px solid cyan;
             flex: 0 0 25%;
             position: relative;
 
-            .graphContainer {
+            &__graph-container {
                 width: 200px;
                 height: 400px;
                 position: absolute;
                 bottom: 0;
-
-                // 코인 정보 리스트 박스
-                .infoListBox {
-                    display: none;
-                    position: absolute;
-                    bottom: 2rem;
-                    left: -1rem;
-                    transform: translateX(-100%);
-                    color: $c-primary-bright;
-
-                    // 코인 정보 리스트
-                    .infoList {
-                        ul {
-                            float: left;
-                            margin-right: 1rem;
-                            font-size: 1rem;
-
-                            >li {
-                                line-height: 1.8rem;
-                            }
-                        }
-
-                        .infoTitle {
-                            text-align: right;
-                        }
-
-                        &::after {
-                            display: block;
-                            content: "";
-                            clear: both;
-                        }
-                    }
-                }
 
                 .show {
                     -webkit-transition: opacity 3s;
@@ -197,22 +162,57 @@
                     bottom: 0;
                     margin: 0;
 
-                    h2 {
-                        position: absolute;
-                        bottom: 0;
-                        transform: translateX(-100%) rotate(180deg);
-                        font-weight: 800;
-                        font-size: 1.6rem;
-                    }
+                    .progressbar {
+                        &__current-price {
+                            position: absolute;
+                            bottom: 0;
+                            transform: translateX(-100%) rotate(180deg);
+                            font-weight: 800;
+                            font-size: 1.6rem;
+                        }
 
-                    h6 {
-                        position: absolute;
-                        bottom: 2rem;
-                        transform: translateX(-100%) rotate(180deg);
-                        font-weight: 800;
-                        font-size: 1rem;
+                        &__current-coin {
+                            position: absolute;
+                            bottom: 2rem;
+                            transform: translateX(-100%) rotate(180deg);
+                            font-weight: 800;
+                            font-size: 1rem;
+                        }
                     }
                 }
+            }
+
+            // COIN INFO BOX
+            &__info-list-box {
+                display: none;
+                position: absolute;
+                bottom: 2rem;
+                left: -1rem;
+                transform: translateX(-100%);
+                color: $c-primary-bright;
+            }
+
+            // COIN INFO LIST
+            &__info-list {
+                ul {
+                    float: left;
+                    margin-right: 1rem;
+                    font-size: 1rem;
+
+                    >li {
+                        line-height: 1.8rem;
+                    }
+                }
+
+                &::after {
+                    display: block;
+                    content: "";
+                    clear: both;
+                }
+            }
+
+            &__info-list--info-title {
+                text-align: right;
             }
         }
 
@@ -220,19 +220,19 @@
             flex-flow: column wrap;
             padding: 0 6rem;
 
-            .info {
+            .info-section {
                 margin-bottom: 1rem;
 
-                .goToMarketBtn {
+                &__exchange-button {
                     display: none;
                 }
             }
 
-            .graphBox {
+            .graph-section {
                 width: 100%;
                 margin-bottom: 4rem;
 
-                .graphContainer {
+                &__graph-container {
                     position: relative;
                     margin: 0 auto;
                     transform: translateX(50%);

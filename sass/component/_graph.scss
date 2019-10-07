@@ -10,7 +10,7 @@
         transform-style: preserve-3d;
         transform: rotateX(-20deg) rotateY(-30deg) rotateZ(-180deg);
 
-        .side {
+        &__side {
             position: absolute;
             top: 0;
             left: 0;
@@ -19,28 +19,28 @@
             background-color: rgba(240, 240, 255, 0.1);
         }
 
-        .front {
+        &__front {
             transform-origin: bottom;
             box-shadow: 20px 20px 100px rgba(0, 0, 0, .2);
         }
 
-        .right {
+        &__right {
             transform: translate(-100%, 0) rotateY(-90deg);
             transform-origin: right;
 
         }
 
-        .back {
+        &__back {
             transform: translateZ(-120px);
         }
 
-        .left {
+        &__left {
             transform: rotateY(-90deg);
             transform-origin: right;
             box-shadow: 20px 20px 100px rgba(0, 0, 0, .3);
         }
 
-        .bottom {
+        &__bottom {
             height: 120px;
             transform: rotateX(-90deg);
             transform-origin: top;
@@ -49,7 +49,7 @@
         }
 
         // 모든 면 공통
-        .bar {
+        &__bar {
             width: 100%;
             height: 0;
             background-color: rgba($c-mint, 0.6);
