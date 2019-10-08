@@ -28,6 +28,8 @@ function setList(list, type) {
 }
 
 function getOrder(coin) {
+  console.log("GET ORDER START");
+  asideHeadTitle.innerText = `${coin} - Current Asking Price`;
   fetch(`https://api.coinone.co.kr/orderbook/?currency=${coin}`)
     .then(res => {
       return res.json();
@@ -41,14 +43,9 @@ function getOrder(coin) {
     });
 }
 
-function paintOrder() {
-  console.log(asideHeadTitle.innerText);
-}
-
 function init() {
   const coin = localStorage.getItem("coinName");
   if (coin) {
-    asideHeadTitle.innerText = `${coin} - Current Asking Price`;
     getOrder(coin);
   }
 }

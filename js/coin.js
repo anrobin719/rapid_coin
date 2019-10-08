@@ -107,6 +107,7 @@ function handleSubmit(e) {
   localStorage.setItem(COIN_NAME, input.value);
   localStorage.setItem(COIN_FULL_NAME, coinFullName);
   paintCoin();
+  getOrder(input.value);
 }
 
 function askForCoin() {
