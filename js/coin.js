@@ -4,7 +4,9 @@ const defaultMessage = document.querySelector(".default-message"),
   coinTitle = document.querySelector(".info-section__coinTitle"),
   goToMarketBtn = document.querySelector(".info-section__exchange-button"),
   infoListBox = document.querySelector(".graph-section__info-list-box"),
-  marketAnchor = goToMarketBtn.querySelector("a"),
+  marketAnchor = goToMarketBtn.querySelector(
+    ".info-section__exchange-button > a"
+  ),
   BarCurrentPrice = document.querySelector(".progressbar__current-price"),
   BarCurrentCoin = document.querySelector(".progressbar__current-coin");
 
@@ -41,16 +43,15 @@ function getCoinInfo(coin) {
 }
 
 function setLink(coin) {
-  const lowerCaseCoin = coin.toLowerCase();
   if (coin) {
     marketAnchor.setAttribute(
       "href",
-      `https://coinone.co.kr/exchange/trade/${lowerCaseCoin}/krw`
+      `https://www.binance.com/en/trade/${coin}_USDT`
     );
   } else {
     marketAnchor.setAttribute(
       "href",
-      "https://coinone.co.kr/exchange/trade/btc/krw"
+      "https://www.binance.com/en/trade/BTC_USDT"
     );
   }
 }

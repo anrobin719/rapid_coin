@@ -2,226 +2,242 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/coin128.png" type="image/png" sizes="128x128">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/coin128.png" type="image/png" sizes="128x128" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <title>Rapid Coin</title>
+  <title>Rapid Coin</title>
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header>
-        <i id="openBtn" class="material-icons">sort</i>
-        <h1>Rapid Coin</h1>
-        <nav></nav>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <i id="openBtn" class="material-icons">sort</i>
+    <h1>Rapid Coin</h1>
+    <nav></nav>
+  </header>
 
-    <!-- SIDE DRAWER -->
-    <aside class="side-drawer">
-        <div class="side-drawer__head">
-            <h2></h2>
-            <i id="closeBtn" class="material-icons">keyboard_arrow_left </i>
-        </div>
+  <!-- SIDE DRAWER -->
+  <aside class="side-drawer">
+    <div class="side-drawer__head">
+      <h2></h2>
+      <i id="closeBtn" class="material-icons">keyboard_arrow_left </i>
+    </div>
 
-        <section class="side-drawer__ask-list">
-            <div class="side-drawer__ask-title">
-                <span>Sell Price</span>
-                <span>Sell Amount</span>
-            </div>
-            <!-- SELL PRICE, AMOUNT LIST BOX -->
-            <div class="side-drawer__ask-value"></div>
-        </section>
-        <section class="side-drawer__bid-list">
-            <div class="side-drawer__bid-title">
-                <span>Buy Price</span>
-                <span>Buy Amount</span>
-            </div>
-            <!-- BUY PRICE, AMOUNT LIST BOX -->
-            <div class="side-drawer__bid-value"></div>
-        </section>
-    </aside>
-
-    <!-- FIRST PAGE -->
-    <section id="firstPage">
-        <h2 class="default-message">Please enter a coin name to set as default</h2>
-
-        <div class="wrapper">
-            <!-- COIN SEARCH & OUTPUT. LEFT SIDE -->
-            <section class="info-section">
-                <!-- CLOCK, COIN SEARCH INPUT & OUTPUT -->
-                <div class="info-section__clockBox">
-                    <h2 class="info-section__clock">00:00</h2>
-                </div>
-
-                <form class="info-section__coin-list-form" autocomplete="off">
-                    <input list="coins" placeholder="Enter coin name" name="coin" />
-                    <datalist id="coins">
-                        <option value="BTC">Bitcoin</option>
-                        <option value="ETH">Ethereum</option>
-                        <option value="XRP">Ripple</option>
-                        <option value="EOS">Eos</option>
-                        <option value="ATOM">Cosmos ATOM</option>
-                        <option value="LUNA">Luna</option>
-                        <option value="ETC">Ethereum Classic</option>
-                        <option value="QTUM">Qtum</option>
-                        <option value="XTZ">Tezos</option>
-                        <option value="HINT">Hintchain</option>
-                        <option value="XLM">Stellar Lumens</option>
-                        <option value="NEO">Neo</option>
-                        <option value="OMG">OmiseGO</option>
-                    </datalist>
-                    <button type="submit">SUBMIT</button>
-                </form>
-                <h4 class="info-section__coinTitle"></h4>
-
-                <button class="info-section__exchange-button">
-                    <a href="https://coinone.co.kr/exchange/trade/btc/krw">Cryptocurrency Exchange</a>
-                </button>
-            </section>
-
-            <!-- GRAPH. RIGHT SIDE -->
-            <section class="graph-section">
-
-                <!-- GRAPH CONTAINER -->
-                <div class="graph-section__graph-container">
-                    <div class="graph-section__info-list-box">
-                        <!-- OUTPUT ABOUT COIN PRICE, HIGH, LOW ... -->
-                        <div class="graph-section__info-list">
-                            <ul class="graph-section__info-list--info-title">
-                                <li>Price : </li>
-                                <li>High : </li>
-                                <li>Low : </li>
-                                <li>Yesterday High : </li>
-                                <li>Yesterday Low : </li>
-                            </ul>
-                            <ul class="graph-section__info-list--info-value">
-                                <!-- fetch infoValue -->
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- GRAPH BAR -->
-                    <div class="box">
-                        <div class="progressbar">
-                            <div class="progressbar__side progressbar__front">
-                                <div class="progressbar__bar">
-                                    <h2 class="progressbar__current-price"></h2>
-                                    <h6 class="progressbar__current-coin"></h6>
-                                </div>
-                            </div>
-                            <div class="progressbar__side progressbar__right">
-                                <div class="progressbar__bar"></div>
-                            </div>
-                            <div class="progressbar__side progressbar__back">
-                                <div class="progressbar__bar"></div>
-                            </div>
-                            <div class="progressbar__side progressbar__left">
-                                <div class="progressbar__bar"></div>
-                            </div>
-                            <div class="progressbar__side progressbar__bottom"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div><!-- end .wrapper -->
-
-        <i id="downBtn" class="material-icons"><a href="#secondPage">keyboard_arrow_down</a></i>
-    </section><!-- end #firstPage -->
-
-
-    <!-- SECOND PAGE -->
-    <section id="secondPage">
-        <i id="upBtn" class="material-icons"><a href="#firstPage">keyboard_arrow_up</a></i>
-
-        <!-- MODAL -->
-        <div class="modalBox">
-            <div class="modal">
-                <h4 class="modal__title"></h4>
-                <div class="modal__sub">
-                    <span class="modal__sub--date"></span>
-                    <span class="modal__sub--tag"></span>
-                </div>
-                <div class="modal__img">
-                    <img>
-                </div>
-                <div class="modal__contents">
-                </div>
-                <div class="modal__button">
-                    <a>View whole article</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- WHITE CONTENTS BOX -->
-        <div class="wrapper">
-            <!-- BLOCK CHAIN -->
-            <div class="blockChain">
-                <h2 class="blockChain__mainTitle">Block Chain</h2>
-
-                <article class="blockChain__article">
-                    <div class="blockChain__img"><img width="100%" height="100%" alt=""></div>
-                    <div class="blockChain__contents">
-                        <span class="blockChain__contents--date"></span>
-                        <h4 class="blockChain__contents--title"></h4>
-                    </div>
-                </article>
-                <article class="blockChain__article">
-                    <div class="blockChain__img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="blockChain__contents">
-                        <span class="blockChain__contents--date"></span>
-                        <h4 class="blockChain__contents--title"></h4>
-                    </div>
-                </article>
-                <article class="blockChain__article">
-                    <div class="blockChain__img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="blockChain__contents">
-                        <span class="blockChain__contents--date"></span>
-                        <h4 class="blockChain__contents--title"></h4>
-                    </div>
-                </article>
-                <div class="ico__more-button"><a href="https://www.cryptohub.or.kr/news">More ></a></div>
-            </div>
-
-            <!-- ICO -->
-            <div class="ico">
-                <h2 class="ico__mainTitle">ICO</h2>
-
-                <article class="ico__article">
-                    <div class="ico__img"><img width="100%" height="100%" alt=""></div>
-                    <div class="ico__contents">
-                        <span class="ico__contents--date"></span>
-                        <h4 class="ico__contents--title"></h4>
-                    </div>
-                </article>
-                <article class="ico__article">
-                    <div class="ico__img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="ico__contents">
-                        <span class="ico__contents--date"></span>
-                        <h4 class="ico__contents--title"></h4>
-                    </div>
-                </article>
-                <article class="ico__article">
-                    <div class="ico__img"><img width="100%" height="100%" src="" alt=""></div>
-                    <div class="ico__contents">
-                        <span class="ico__contents--date"></span>
-                        <h4 class="ico__contents--title"></h4>
-                    </div>
-                </article>
-                <div class="ico__more-button"><a href="https://www.cryptohub.or.kr/news">More ></a></div>
-            </div>
-        </div>
+    <section class="side-drawer__ask-list">
+      <div class="side-drawer__ask-title">
+        <span>Sell Price</span>
+        <span>Sell Amount</span>
+      </div>
+      <!-- SELL PRICE, AMOUNT LIST BOX -->
+      <div class="side-drawer__ask-value"></div>
     </section>
+    <section class="side-drawer__bid-list">
+      <div class="side-drawer__bid-title">
+        <span>Buy Price</span>
+        <span>Buy Amount</span>
+      </div>
+      <!-- BUY PRICE, AMOUNT LIST BOX -->
+      <div class="side-drawer__bid-value"></div>
+    </section>
+  </aside>
 
+  <!-- FIRST PAGE -->
+  <section id="firstPage">
+    <h2 class="default-message">
+      Please enter a coin name to set as default
+    </h2>
 
-    <!-- scripts -->
-    <script src="./node_modules/moment/moment.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/coin.js"></script>
-    <script src="js/sideDrawer.js"></script>
-    <script src="js/coinOrder.js"></script>
-    <script src="js/cryptoNews.js"></script>
+    <div class="wrapper">
+      <!-- COIN SEARCH & OUTPUT. LEFT SIDE -->
+      <section class="info-section">
+        <!-- CLOCK, COIN SEARCH INPUT & OUTPUT -->
+        <div class="info-section__clockBox">
+          <h2 class="info-section__clock">00:00</h2>
+        </div>
+
+        <form class="info-section__coin-list-form" autocomplete="off">
+          <input list="coins" placeholder="Enter coin name" name="coin" />
+          <datalist id="coins">
+            <option value="BTC">Bitcoin</option>
+            <option value="ETH">Ethereum</option>
+            <option value="XRP">Ripple</option>
+            <option value="EOS">Eos</option>
+            <option value="ATOM">Cosmos ATOM</option>
+            <option value="LUNA">Luna</option>
+            <option value="ETC">Ethereum Classic</option>
+            <option value="QTUM">Qtum</option>
+            <option value="XTZ">Tezos</option>
+            <option value="HINT">Hintchain</option>
+            <option value="XLM">Stellar Lumens</option>
+            <option value="NEO">Neo</option>
+            <option value="OMG">OmiseGO</option>
+          </datalist>
+          <button type="submit">SUBMIT</button>
+        </form>
+        <h4 class="info-section__coinTitle"></h4>
+
+        <button class="info-section__exchange-button">
+          <a href="https://www.binance.com/en/trade/BTC_USDT" target="_blank">Cryptocurrency Exchange</a>
+        </button>
+      </section>
+
+      <!-- GRAPH. RIGHT SIDE -->
+      <section class="graph-section">
+        <!-- GRAPH CONTAINER -->
+        <div class="graph-section__graph-container">
+          <div class="graph-section__info-list-box">
+            <!-- OUTPUT ABOUT COIN PRICE, HIGH, LOW ... -->
+            <div class="graph-section__info-list">
+              <ul class="graph-section__info-list--info-title">
+                <li>Price :</li>
+                <li>High :</li>
+                <li>Low :</li>
+                <li>Yesterday High :</li>
+                <li>Yesterday Low :</li>
+              </ul>
+              <ul class="graph-section__info-list--info-value">
+                <!-- fetch infoValue -->
+              </ul>
+            </div>
+          </div>
+          <!-- GRAPH BAR -->
+          <div class="box">
+            <div class="progressbar">
+              <div class="progressbar__side progressbar__front">
+                <div class="progressbar__bar">
+                  <h2 class="progressbar__current-price"></h2>
+                  <h6 class="progressbar__current-coin"></h6>
+                </div>
+              </div>
+              <div class="progressbar__side progressbar__right">
+                <div class="progressbar__bar"></div>
+              </div>
+              <div class="progressbar__side progressbar__back">
+                <div class="progressbar__bar"></div>
+              </div>
+              <div class="progressbar__side progressbar__left">
+                <div class="progressbar__bar"></div>
+              </div>
+              <div class="progressbar__side progressbar__bottom"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- end .wrapper -->
+
+    <i id="downBtn" class="material-icons"><a href="#secondPage">keyboard_arrow_down</a></i>
+  </section>
+  <!-- end #firstPage -->
+
+  <!-- SECOND PAGE -->
+  <section id="secondPage">
+    <i id="upBtn" class="material-icons"><a href="#firstPage">keyboard_arrow_up</a></i>
+
+    <!-- MODAL -->
+    <div class="modalBox">
+      <div class="modal">
+        <h4 class="modal__title"></h4>
+        <div class="modal__sub">
+          <span class="modal__sub--date"></span>
+          <span class="modal__sub--tag"></span>
+        </div>
+        <div class="modal__img">
+          <img />
+        </div>
+        <div class="modal__contents"></div>
+        <div class="modal__button">
+          <a>View whole article</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHITE CONTENTS BOX -->
+    <div class="wrapper">
+      <!-- BLOCK CHAIN -->
+      <div class="blockChain">
+        <h2 class="blockChain__mainTitle">Block Chain</h2>
+
+        <article class="blockChain__article">
+          <div class="blockChain__img">
+            <img width="100%" height="100%" alt="" />
+          </div>
+          <div class="blockChain__contents">
+            <span class="blockChain__contents--date"></span>
+            <h4 class="blockChain__contents--title"></h4>
+          </div>
+        </article>
+        <article class="blockChain__article">
+          <div class="blockChain__img">
+            <img width="100%" height="100%" src="" alt="" />
+          </div>
+          <div class="blockChain__contents">
+            <span class="blockChain__contents--date"></span>
+            <h4 class="blockChain__contents--title"></h4>
+          </div>
+        </article>
+        <article class="blockChain__article">
+          <div class="blockChain__img">
+            <img width="100%" height="100%" src="" alt="" />
+          </div>
+          <div class="blockChain__contents">
+            <span class="blockChain__contents--date"></span>
+            <h4 class="blockChain__contents--title"></h4>
+          </div>
+        </article>
+        <div class="ico__more-button">
+          <a href="https://www.ccn.com/blockchain-news/">More ></a>
+        </div>
+      </div>
+
+      <!-- ICO -->
+      <div class="ico">
+        <h2 class="ico__mainTitle">ICO</h2>
+
+        <article class="ico__article">
+          <div class="ico__img">
+            <img width="100%" height="100%" alt="" />
+          </div>
+          <div class="ico__contents">
+            <span class="ico__contents--date"></span>
+            <h4 class="ico__contents--title"></h4>
+          </div>
+        </article>
+        <article class="ico__article">
+          <div class="ico__img">
+            <img width="100%" height="100%" src="" alt="" />
+          </div>
+          <div class="ico__contents">
+            <span class="ico__contents--date"></span>
+            <h4 class="ico__contents--title"></h4>
+          </div>
+        </article>
+        <article class="ico__article">
+          <div class="ico__img">
+            <img width="100%" height="100%" src="" alt="" />
+          </div>
+          <div class="ico__contents">
+            <span class="ico__contents--date"></span>
+            <h4 class="ico__contents--title"></h4>
+          </div>
+        </article>
+        <div class="ico__more-button">
+          <a href="https://www.ccn.com/tag/ico/">More ></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- scripts -->
+  <script src="./node_modules/moment/moment.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/coin.js"></script>
+  <script src="js/sideDrawer.js"></script>
+  <script src="js/coinOrder.js"></script>
+  <script src="js/cryptoNews.js"></script>
 </body>
 
 </html>

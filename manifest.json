@@ -1,41 +1,37 @@
 {
-    "manifest_version": 2,
-    "name": "Rapid Coin",
-    "version": "2",
-    "description": "Current cryptocurrency exchange information and Blockchain news.",
-    "icons": {
-        "16": "assets/coin16.png",
-        "48": "assets/coin48.png",
-        "128": "assets/coin128.png"
+  "manifest_version": 2,
+  "name": "Rapid Coin",
+  "version": "2.1.3",
+  "description": "Current cryptocurrency exchange information and Blockchain news.",
+  "icons": {
+    "16": "assets/coin16.png",
+    "48": "assets/coin48.png",
+    "128": "assets/coin128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/coin16.png",
+      "48": "assets/coin48.png",
+      "128": "assets/coin128.png"
     },
-    "browser_action": {
-        "default_icon": {
-            "16": "assets/coin16.png",
-            "48": "assets/coin48.png",
-            "128": "assets/coin128.png"
-        },
-        "default_title": "Rapid Coin"
-    },
-    "web_accessible_resources": [
-        "*.png"
-    ],
-    "content_scripts": [{
-        "matches": [
-            "<all_urls>"
-        ],
-        "js": [
-            "js/clock.js",
-            "js/coin.js",
-            "js/coinOrder.js",
-            "js/newsMeetup.js",
-            "js/sideDrawer.js"
-        ]
-    }],
-    "background": {
-        "scripts": ["js/background.js"]
-    },
-    "chrome_url_overrides": {
-        "newtab": "index.html"
-    },
-    "permissions": ["activeTab"]
+    "default_title": "Rapid Coin"
+  },
+  "web_accessible_resources": ["*.png"],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": [
+      "js/clock.js",
+      "js/coin.js",
+      "js/coinOrder.js",
+      "js/cryptoNews.js",
+      "js/sideDrawer.js"
+    ]
+  }],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["activeTab"]
 }
