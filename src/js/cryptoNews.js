@@ -115,9 +115,9 @@ function getNews() {
     });
 }
 
-function init() {
+function initCryptoNews() {
   // GET BLOCK CHAIN NEWS & ICO NEWS
   getNews();
 }
 
-init();
+initCryptoNews();

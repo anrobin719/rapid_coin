@@ -20,6 +20,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         overflow: scroll;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
 
         &__title {
             font-size: 1.8rem;

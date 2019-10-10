@@ -17,7 +17,7 @@ function handleCloseSideDrawer() {
   firstPage.style.width = "100vw";
 }
 
-function init() {
+function initSideDrawer() {
   sideDrawer.style.transition = "all .3s linear";
   firstPage.style.transition = "width .3s linear";
   openBtn.addEventListener("click", handleOpenSideDrawer);
@@ -29,4 +29,4 @@ function init() {
   });
 }
 
-init();
+initSideDrawer();

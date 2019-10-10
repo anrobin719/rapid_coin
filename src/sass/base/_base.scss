@@ -15,6 +15,11 @@ body {
   font-weight: 300;
   font-size: 1rem;
   background-color: $c-primary-dark;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
 
   h1,
   h2,

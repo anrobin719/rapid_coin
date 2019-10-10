@@ -128,7 +128,7 @@ function paintCoin() {
   getCoinInfo(coin);
 }
 
-function init() {
+function initCoin() {
   const coin = localStorage.getItem(COIN_NAME);
   if (!coin) {
     askForCoin();
@@ -137,4 +137,4 @@ function init() {
   }
 }
 
-init();
+initCoin();
