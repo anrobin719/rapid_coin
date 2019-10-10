@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Rapid Coin",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "description": "Current cryptocurrency exchange information and Blockchain news.",
   "icons": {
     "16": "assets/coin16.png",

@@ -137,12 +137,15 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
-  overflow: scroll;
   width: 20rem;
   color: white;
   background-color: #0a0b18;
   opacity: 0;
-  transform: translateX(-100%); }
+  transform: translateX(-100%);
+  overflow-y: auto;
+  -ms-overflow-style: none; }
+  .side-drawer::-webkit-scrollbar {
+    display: none !important; }
   .side-drawer__head {
     height: 4rem;
     margin: 0 1rem;
@@ -361,12 +364,15 @@ header {
         border: 1px solid white;
         border-radius: .2rem;
         color: white;
-        padding: .6rem 1.4rem;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        cursor: pointer; }
+        cursor: pointer;
+        outline: none; }
+        #firstPage .wrapper .info-section__exchange-button a {
+          display: inline-block;
+          padding: .6rem 1.4rem; }
       #firstPage .wrapper .info-section .show {
         -webkit-transition: opacity 3s;
         -moz-transition: opacity 3s;

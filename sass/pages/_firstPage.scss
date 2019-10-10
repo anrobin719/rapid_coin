@@ -109,12 +109,18 @@
                 border: 1px solid white;
                 border-radius: .2rem;
                 color: white;
-                padding: .6rem 1.4rem;
+
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
                 font-size: 16px;
                 cursor: pointer;
+                outline: none;
+
+                a {
+                    display: inline-block;
+                    padding: .6rem 1.4rem;
+                }
             }
 
             .show {
