@@ -7,6 +7,7 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
+const gulp_remove_logging = require("gulp-remove-logging");
 
 // COMBINE JS FILES
 function combineJs() {
@@ -18,6 +19,7 @@ function combineJs() {
     "src/js/cryptoNews.js"
   ])
     .pipe(concat("all.js"))
+    .pipe(gulp_remove_logging())
     .pipe(dest("dist/js"));
 }
 
